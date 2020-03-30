@@ -281,7 +281,7 @@
 `define CP0_REG_CONFIG    5'b10000      
 
 //wishbone总线分配
-`define WB_IDLE 2'b00
-`define WB_BUSY 2'b01
-`define WB_WAIT_FOR_FLUSHING 2'b10
-`define WB_WAIT_FOR_STALL 2'b11
+`define WB_IDLE 2'b00  // 空闲状态
+`define WB_BUSY 2'b01  // 总线忙状态
+`define WB_WAIT_FOR_FLUSHING 2'b10 // 
+`define WB_WAIT_FOR_STALL 2'b11 // 等待暂停状态

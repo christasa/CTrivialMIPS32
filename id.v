@@ -52,9 +52,9 @@ module id(
 	output wire                   stallreq	
 );
 
-  wire[5:0] op = inst_i[31:26];
+  wire[5:0] op = inst_i[31:26];  // 指令码
   wire[4:0] op2 = inst_i[10:6];
-  wire[5:0] op3 = inst_i[5:0];
+  wire[5:0] op3 = inst_i[5:0];   // 功能码
   wire[4:0] op4 = inst_i[20:16];
   reg[`RegBus]	imm;
   reg instvalid;
@@ -325,7 +325,7 @@ module id(
 								end	
 					 endcase									
 					end									  
-		  	`EXE_ORI:			begin                        //ORIָ��
+		  	`EXE_ORI:			begin                        //ORIÖ¸Áî
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
 					imm <= {16'h0, inst_i[15:0]};		wd_o <= inst_i[20:16];
