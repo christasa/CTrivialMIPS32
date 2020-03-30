@@ -2,8 +2,8 @@
 
 module if_id(
 
-	input	wire										clk,
-	input wire										rst,
+	input	wire		clk,
+	input wire		rst,
 
 	input wire[5:0]               stall,	
 	input wire                    flush,

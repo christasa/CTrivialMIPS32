@@ -5,11 +5,9 @@ module wishbone_bus_if(
 	input	wire										clk,
 	input wire										rst,
 	
-	//??????ctrl
 	input wire[5:0]               stall_i,
 	input                         flush_i,
 	
-	//CPU???????
 	input wire                    cpu_ce_i,
 	input wire[`RegBus]           cpu_data_i,
 	input wire[`RegBus]           cpu_addr_i,
@@ -17,7 +15,6 @@ module wishbone_bus_if(
 	input wire[3:0]               cpu_sel_i,
 	output reg[`RegBus]           cpu_data_o,
 	
-	//Wishbone?????
 	input wire[`RegBus]           wishbone_data_i,
 	input wire                    wishbone_ack_i,
 	output reg[`RegBus]           wishbone_addr_o,
@@ -103,8 +100,8 @@ module wishbone_bus_if(
 				default: begin
 				end 
 			endcase
-		end    //if
-	end      //always
+		end    
+	end      
 			
 
 	always @ (*) begin
@@ -124,7 +121,7 @@ module wishbone_bus_if(
 					if(wishbone_ack_i == 1'b1) begin
 						stallreq <= `NoStop;
 						if(wishbone_we_o == `WriteDisable) begin
-							cpu_data_o <= wishbone_data_i;  //????
+							cpu_data_o <= wishbone_data_i;  
 						end else begin
 						  cpu_data_o <= `ZeroWord;
 						end							

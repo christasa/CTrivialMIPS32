@@ -41,12 +41,12 @@ module ex(
 	input wire                    is_in_delayslot_i,	
 
 	//访存阶段的指令是否要写CP0，用来检测数据相关
-  input wire                    mem_cp0_reg_we,
+    input wire                    mem_cp0_reg_we,
 	input wire[4:0]               mem_cp0_reg_write_addr,
 	input wire[`RegBus]           mem_cp0_reg_data,
 	
 	//回写阶段的指令是否要写CP0，用来检测数据相关
-  input wire                    wb_cp0_reg_we,
+    input wire                    wb_cp0_reg_we,
 	input wire[4:0]               wb_cp0_reg_write_addr,
 	input wire[`RegBus]           wb_cp0_reg_data,
 
@@ -145,8 +145,8 @@ module ex(
 					logicout <= `ZeroWord;
 				end
 			endcase
-		end    //if
-	end      //always
+		end    
+	end      
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin
@@ -167,8 +167,8 @@ module ex(
 					shiftres <= `ZeroWord;
 				end
 			endcase
-		end    //if
-	end      //always
+		end    
+	end      
 
 	assign reg2_i_mux = ((aluop_i == `EXE_SUB_OP) || (aluop_i == `EXE_SUBU_OP) ||
 											 (aluop_i == `EXE_SLT_OP)|| (aluop_i == `EXE_TLT_OP) ||
