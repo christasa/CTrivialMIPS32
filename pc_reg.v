@@ -2,8 +2,8 @@
 
 module pc_reg(
 
-	input	wire										clk,
-	input wire										rst,
+	input	wire			clk,
+	input wire				rst,
 
 	//来自控制模块的信息
 	input wire[5:0]               stall,
@@ -14,7 +14,7 @@ module pc_reg(
 	input wire                    branch_flag_i,
 	input wire[`RegBus]           branch_target_address_i,
 	
-	output reg[`InstAddrBus]			pc,
+	output reg[`InstAddrBus]	  pc,
 	output reg                    ce
 	
 );
