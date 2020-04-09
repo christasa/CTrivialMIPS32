@@ -2,20 +2,20 @@
 
 module id(
 
-	input wire										rst,
-	input wire[`InstAddrBus]			pc_i,
-	input wire[`InstBus]          inst_i,
+	input wire					 rst,
+	input wire[`InstAddrBus]	 pc_i,
+	input wire[`InstBus]         inst_i,
 
-  input wire[`AluOpBus]					ex_aluop_i,
+    input wire[`AluOpBus]		  ex_aluop_i,
 
 	
-	input wire										ex_wreg_i,
-	input wire[`RegBus]						ex_wdata_i,
-	input wire[`RegAddrBus]       ex_wd_i,
+	input wire					 ex_wreg_i,
+	input wire[`RegBus]			 ex_wdata_i,
+	input wire[`RegAddrBus]      ex_wd_i,
 	
 	
-	input wire										mem_wreg_i,
-	input wire[`RegBus]						mem_wdata_i,
+	input wire					  mem_wreg_i,
+	input wire[`RegBus]			  mem_wdata_i,
 	input wire[`RegAddrBus]       mem_wd_i,
 	
 	input wire[`RegBus]           reg1_data_i,
@@ -46,8 +46,8 @@ module id(
 	output reg[`RegBus]           link_addr_o,
 	output reg                    is_in_delayslot_o,
 
-  output wire[31:0]             excepttype_o,
-  output wire[`RegBus]          current_inst_address_o,
+  output wire[31:0]              excepttype_o,
+  output wire[`RegBus]           current_inst_address_o,
 	
 	output wire                   stallreq	
 );
