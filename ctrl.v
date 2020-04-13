@@ -1,18 +1,17 @@
+
 `include "defines.v"
 
 module ctrl(
 
-	input wire	rst,
+	input wire										rst,
 
 	input wire[31:0]             excepttype_i,
 	input wire[`RegBus]          cp0_epc_i,
 
-	input wire                   stallreq_from_if,
 	input wire                   stallreq_from_id,
 
   //À´×ÔÖ´ÐÐ½×¶ÎµÄÔÝÍ£ÇëÇó
 	input wire                   stallreq_from_ex,
-	input wire                   stallreq_from_mem,	
 
 	output reg[`RegBus]          new_pc,
 	output reg                   flush,	
@@ -23,8 +22,8 @@ module ctrl(
 
 	always @ (*) begin
 		if(rst == `RstEnable) begin
-			stall <= 6'b000000;   // ÖØÖÃÔÝÍ£
-			flush <= 1'b0; 
+			stall <= 6'b000000;
+			flush <= 1'b0;
 			new_pc <= `ZeroWord;
 		end else if(excepttype_i != `ZeroWord) begin
 		  flush <= 1'b1;
@@ -51,20 +50,14 @@ module ctrl(
 				default	: begin
 				end
 			endcase 						
-		end else if(stallreq_from_mem == `Stop) begin
-			stall <= 6'b011111;    // ·Ã´æ½×¶ÎµÄÇëÇóÔÝÍ£
-			flush <= 1'b0;					
 		end else if(stallreq_from_ex == `Stop) begin
-			stall <= 6'b001111;    // Ö´ÐÐ½×¶ÎÇëÇóÔÝÍ£
+			stall <= 6'b001111;
 			flush <= 1'b0;		
 		end else if(stallreq_from_id == `Stop) begin
-			stall <= 6'b000111;	   // ÒëÂë½×¶ÎÇëÇóÔÝÍ£
+			stall <= 6'b000111;	
 			flush <= 1'b0;		
-    end else if(stallreq_from_if == `Stop) begin
-			stall <= 6'b000111;    // È¡Ö¸½×¶ÎÇëÇóÔÝÍ£
-			flush <= 1'b0;						
 		end else begin
-			stall <= 6'b000000;   // ÎÞÔÝÍ£
+			stall <= 6'b000000;
 			flush <= 1'b0;
 			new_pc <= `ZeroWord;		
 		end    //if

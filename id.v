@@ -2,34 +2,29 @@
 
 module id(
 
-	input wire					 rst,
-	input wire[`InstAddrBus]	 pc_i,
-	input wire[`InstBus]         inst_i,
+	input wire										rst,
+	input wire[`InstAddrBus]			pc_i,
+	input wire[`InstBus]          inst_i,
 
-    input wire[`AluOpBus]		  ex_aluop_i,
+  	input wire[`AluOpBus]					ex_aluop_i,
 
+	input wire										ex_wreg_i,
+	input wire[`RegBus]						ex_wdata_i,
+	input wire[`RegAddrBus]       ex_wd_i,
 	
-	input wire					 ex_wreg_i,
-	input wire[`RegBus]			 ex_wdata_i,
-	input wire[`RegAddrBus]      ex_wd_i,
-	
-	
-	input wire					  mem_wreg_i,
-	input wire[`RegBus]			  mem_wdata_i,
+	input wire										mem_wreg_i,
+	input wire[`RegBus]						mem_wdata_i,
 	input wire[`RegAddrBus]       mem_wd_i,
 	
 	input wire[`RegBus]           reg1_data_i,
 	input wire[`RegBus]           reg2_data_i,
 
-	
 	input wire                    is_in_delayslot_i,
 
-	
 	output reg                    reg1_read_o,
 	output reg                    reg2_read_o,     
 	output reg[`RegAddrBus]       reg1_addr_o,
 	output reg[`RegAddrBus]       reg2_addr_o, 	      
-	
 	
 	output reg[`AluOpBus]         aluop_o,
 	output reg[`AluSelBus]        alusel_o,
@@ -46,15 +41,15 @@ module id(
 	output reg[`RegBus]           link_addr_o,
 	output reg                    is_in_delayslot_o,
 
-  output wire[31:0]              excepttype_o,
-  output wire[`RegBus]           current_inst_address_o,
+  output wire[31:0]             excepttype_o,
+  output wire[`RegBus]          current_inst_address_o,
 	
 	output wire                   stallreq	
 );
 
-  wire[5:0] op = inst_i[31:26];  // 指令码
+  wire[5:0] op = inst_i[31:26];
   wire[4:0] op2 = inst_i[10:6];
-  wire[5:0] op3 = inst_i[5:0];   // 功能码
+  wire[5:0] op3 = inst_i[5:0];
   wire[4:0] op4 = inst_i[20:16];
   reg[`RegBus]	imm;
   reg instvalid;
@@ -87,7 +82,7 @@ module id(
 
   assign excepttype_o = {19'b0,excepttype_is_eret,2'b0,
   												instvalid, excepttype_is_syscall,8'b0};
-
+  //assign excepttye_is_trapinst = 1'b0;
   
 	assign current_inst_address_o = pc_i;
     
@@ -325,7 +320,7 @@ module id(
 								end	
 					 endcase									
 					end									  
-		  	`EXE_ORI:			begin                        //ORIÖ¸Áî
+		  	`EXE_ORI:			begin                        //ORIָ��
 		  		wreg_o <= `WriteEnable;		aluop_o <= `EXE_OR_OP;
 		  		alusel_o <= `EXE_RES_LOGIC; reg1_read_o <= 1'b1;	reg2_read_o <= 1'b0;	  	
 					imm <= {16'h0, inst_i[15:0]};		wd_o <= inst_i[20:16];

@@ -1,42 +1,34 @@
+
 `include "defines.v"
 
-module cnotionmips(
+module openmips(
 
-	input	wire				clk,
-	input wire					rst,
+	input	wire										clk,
+	input wire										rst,
 	
-    input wire[5:0]                int_i,
+  input wire[5:0]                int_i,
   
-    //指令wishbone总线
-	input wire[`RegBus]            iwishbone_data_i,
-	input wire                     iwishbone_ack_i,
-	output wire[`RegBus]           iwishbone_addr_o,
-	output wire[`RegBus]           iwishbone_data_o,
-	output wire                    iwishbone_we_o,
-	output wire[3:0]               iwishbone_sel_o,
-	output wire                    iwishbone_stb_o,
-	output wire                    iwishbone_cyc_o, 
+	input wire[`RegBus]           rom_data_i,
+	output wire[`RegBus]           rom_addr_o,
+	output wire                    rom_ce_o,
 	
-  //数据wishbone总线
-	input wire[`RegBus]            dwishbone_data_i,
-	input wire                     dwishbone_ack_i,
-	output wire[`RegBus]           dwishbone_addr_o,
-	output wire[`RegBus]           dwishbone_data_o,
-	output wire                    dwishbone_we_o,
-	output wire[3:0]               dwishbone_sel_o,
-	output wire                    dwishbone_stb_o,
-	output wire                    dwishbone_cyc_o,
+  //连接数据存储器data_ram
+	input wire[`RegBus]           ram_data_i,
+	output wire[`RegBus]           ram_addr_o,
+	output wire[`RegBus]           ram_data_o,
+	output wire                    ram_we_o,
+	output wire[3:0]               ram_sel_o,
+	output wire[3:0]               ram_ce_o,
 	
 	output wire                    timer_int_o
 	
 );
 
 	wire[`InstAddrBus] pc;
-	wire[`InstBus] inst_i;	
 	wire[`InstAddrBus] id_pc_i;
 	wire[`InstBus] id_inst_i;
 	
-	//连接译码阶段ID模块的输出与ID/EX模块的输入
+	// 连接译码阶段ID模块的输出与ID/EX模块的输入
 	wire[`AluOpBus] id_aluop_o;
 	wire[`AluSelBus] id_alusel_o;
 	wire[`RegBus] id_reg1_o;
@@ -49,7 +41,7 @@ module cnotionmips(
   wire[31:0] id_excepttype_o;
   wire[`RegBus] id_current_inst_address_o;
 	
-	//连接ID/EX模块的输出与执行阶段EX模块的输入
+	// 连接ID/EX模块的输出与执行阶段EX模块的输入
 	wire[`AluOpBus] ex_aluop_i;
 	wire[`AluSelBus] ex_alusel_i;
 	wire[`RegBus] ex_reg1_i;
@@ -96,7 +88,7 @@ module cnotionmips(
 	wire mem_is_in_delayslot_i;
 	wire[`RegBus] mem_current_inst_address_i;	
 
-	//连接访存阶段MEM模块的输出与MEM/WB模块的输入
+	// 连接访存阶段MEM模块的输出与MEM/WB模块的输入
 	wire mem_wreg_o;
 	wire[`RegAddrBus] mem_wd_o;
 	wire[`RegBus] mem_wdata_o;
@@ -112,7 +104,7 @@ module cnotionmips(
 	wire mem_is_in_delayslot_o;
 	wire[`RegBus] mem_current_inst_address_o;			
 	
-	//连接MEM/WB模块的输出与回写阶段的输入	
+	// 连接MEM/WB模块的输出与回写阶段的输入	
 	wire wb_wreg_i;
 	wire[`RegAddrBus] wb_wd_i;
 	wire[`RegBus] wb_wdata_i;
@@ -128,19 +120,19 @@ module cnotionmips(
 	wire wb_is_in_delayslot_i;
 	wire[`RegBus] wb_current_inst_address_i;
 	
-	//连接译码阶段ID模块与通用寄存器Regfile模块
-  wire reg1_read;
-  wire reg2_read;
-  wire[`RegBus] reg1_data;
-  wire[`RegBus] reg2_data;
-  wire[`RegAddrBus] reg1_addr;
-  wire[`RegAddrBus] reg2_addr;
+	// 连接译码阶段ID模块与通用寄存器Regfile模块
+	wire reg1_read;
+	wire reg2_read;
+	wire[`RegBus] reg1_data;
+	wire[`RegBus] reg2_data;
+	wire[`RegAddrBus] reg1_addr;
+	wire[`RegAddrBus] reg2_addr;
 
-	//连接执行阶段与hilo模块的输出，读取HI、LO寄存器
+	// 连接执行阶段与hilo模块的输出，读取HI、LO寄存器
 	wire[`RegBus] 	hi;
 	wire[`RegBus]   lo;
 
-  //连接执行阶段与ex_reg模块，用于多周期的MADD、MADDU、MSUB、MSUBU指令
+    // 连接执行阶段与ex_reg模块，用于多周期的MADD、MADDU、MSUB、MSUBU指令
 	wire[`DoubleRegBus] hilo_temp_o;
 	wire[1:0] cnt_o;
 	
@@ -162,10 +154,8 @@ module cnotionmips(
 	wire[`RegBus] branch_target_address;
 
 	wire[5:0] stall;
+	wire stallreq_from_id;	
 	wire stallreq_from_ex;
-	wire stallreq_from_id;
-  wire stallreq_from_if;
-	wire stallreq_from_mem;
 
 	wire LLbit_o;
 
@@ -184,17 +174,8 @@ module cnotionmips(
 	wire[`RegBus]	cp0_prid; 
 
   wire[`RegBus] latest_epc;
-
-	wire rom_ce;
-
-	wire[31:0] ram_addr_o;
-	wire ram_we_o;
-  wire[3:0] ram_sel_o;
-	wire[`RegBus] ram_data_o;
-	wire ram_ce_o;
-  wire[`RegBus] ram_data_i;
   
-  //pc_reg例化
+  // pc_reg例化
 	pc_reg pc_reg0(
 		.clk(clk),
 		.rst(rst),
@@ -204,23 +185,25 @@ module cnotionmips(
 		.branch_flag_i(id_branch_flag_o),
 		.branch_target_address_i(branch_target_address),		
 		.pc(pc),
-		.ce(rom_ce)					
+		.ce(rom_ce_o)	
 			
 	);
 	
-  //IF/ID模块例化
+  assign rom_addr_o = pc;
+
+  // IF/ID模块例化
 	if_id if_id0(
 		.clk(clk),
 		.rst(rst),
 		.stall(stall),
 		.flush(flush),
 		.if_pc(pc),
-		.if_inst(inst_i),
+		.if_inst(rom_data_i),
 		.id_pc(id_pc_i),
 		.id_inst(id_inst_i)      	
 	);
 	
-	//译码阶段ID模块
+	// 译码阶段ID模块
 	id id0(
 		.rst(rst),
 		.pc_i(id_pc_i),
@@ -231,26 +214,26 @@ module cnotionmips(
 		.reg1_data_i(reg1_data),
 		.reg2_data_i(reg2_data),
 
-	  //处于执行阶段的指令要写入的目的寄存器信息
+	  // 处于执行阶段的指令要写入的目的寄存器信息
 		.ex_wreg_i(ex_wreg_o),
 		.ex_wdata_i(ex_wdata_o),
 		.ex_wd_i(ex_wd_o),
 
-	  //处于访存阶段的指令要写入的目的寄存器信息
+	  // 处于访存阶段的指令要写入的目的寄存器信息
 		.mem_wreg_i(mem_wreg_o),
 		.mem_wdata_i(mem_wdata_o),
 		.mem_wd_i(mem_wd_o),
 
 	  .is_in_delayslot_i(is_in_delayslot_i),
 
-		//送到regfile的信息
+		// 送到regfile的信息
 		.reg1_read_o(reg1_read),
 		.reg2_read_o(reg2_read), 	  
 
 		.reg1_addr_o(reg1_addr),
 		.reg2_addr_o(reg2_addr), 
 	  
-		//送到ID/EX模块的信息
+		// 送到ID/EX模块的信息
 		.aluop_o(id_aluop_o),
 		.alusel_o(id_alusel_o),
 		.reg1_o(id_reg1_o),
@@ -271,7 +254,7 @@ module cnotionmips(
 		.stallreq(stallreq_from_id)		
 	);
 
-  //通用寄存器Regfile例化
+  // 通用寄存器Regfile例化
 	regfile regfile1(
 		.clk (clk),
 		.rst (rst),
@@ -590,12 +573,10 @@ module cnotionmips(
 	  .excepttype_i(mem_excepttype_o),
 	  .cp0_epc_i(latest_epc),
  
-    .stallreq_from_if(stallreq_from_if),	  
 		.stallreq_from_id(stallreq_from_id),
 	
   	//来自执行阶段的暂停请求
 		.stallreq_from_ex(stallreq_from_ex),
-		.stallreq_from_mem(stallreq_from_mem),
 	  .new_pc(new_pc),
 	  .flush(flush),
 		.stall(stall)       	
@@ -655,66 +636,5 @@ module cnotionmips(
 		
 		.timer_int_o(timer_int_o)  			
 	);
-
-	wishbone_bus_if dwishbone_bus_if(
-		.clk(clk),
-		.rst(rst),
-	
-		//来自控制模块ctrl
-		.stall_i(stall),
-		.flush_i(flush),
-
-	
-		//CPU侧读写操作信息
-		.cpu_ce_i(ram_ce_o),
-		.cpu_data_i(ram_data_o),
-		.cpu_addr_i(ram_addr_o),
-		.cpu_we_i(ram_we_o),
-		.cpu_sel_i(ram_sel_o),
-		.cpu_data_o(ram_data_i),
-	
-		//Wishbone总线侧接口
-		.wishbone_data_i(dwishbone_data_i),
-		.wishbone_ack_i(dwishbone_ack_i),
-		.wishbone_addr_o(dwishbone_addr_o),
-		.wishbone_data_o(dwishbone_data_o),
-		.wishbone_we_o(dwishbone_we_o),
-		.wishbone_sel_o(dwishbone_sel_o),
-		.wishbone_stb_o(dwishbone_stb_o),
-		.wishbone_cyc_o(dwishbone_cyc_o),
-
-		.stallreq(stallreq_from_mem)	       
-	
-);
-
-	wishbone_bus_if iwishbone_bus_if(
-		.clk(clk),
-		.rst(rst),
-	
-		//来自控制模块ctrl
-		.stall_i(stall),
-		.flush_i(flush),
-	
-		//CPU侧读写操作信息
-		.cpu_ce_i(rom_ce),
-		.cpu_data_i(32'h00000000),
-		.cpu_addr_i(pc),
-		.cpu_we_i(1'b0),
-		.cpu_sel_i(4'b1111),
-		.cpu_data_o(inst_i),
-	
-		//Wishbone总线侧接口
-		.wishbone_data_i(iwishbone_data_i),
-		.wishbone_ack_i(iwishbone_ack_i),
-		.wishbone_addr_o(iwishbone_addr_o),
-		.wishbone_data_o(iwishbone_data_o),
-		.wishbone_we_o(iwishbone_we_o),
-		.wishbone_sel_o(iwishbone_sel_o),
-		.wishbone_stb_o(iwishbone_stb_o),
-		.wishbone_cyc_o(iwishbone_cyc_o),
-
-		.stallreq(stallreq_from_if)	       
-	
-);
 	
 endmodule

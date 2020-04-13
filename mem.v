@@ -4,6 +4,7 @@ module mem(
 
 	input wire										rst,
 	
+	//来自执行阶段的信息	
 	input wire[`RegAddrBus]       wd_i,
 	input wire                    wreg_i,
 	input wire[`RegBus]					  wdata_i,
@@ -11,17 +12,20 @@ module mem(
 	input wire[`RegBus]           lo_i,
 	input wire                    whilo_i,	
 
-  input wire[`AluOpBus]        aluop_i,
+    input wire[`AluOpBus]        aluop_i,
 	input wire[`RegBus]          mem_addr_i,
 	input wire[`RegBus]          reg2_i,
 	
+	// 来自memory的信息
 	input wire[`RegBus]          mem_data_i,
 
+	// LLbit_i是LLbit寄存器的值
 	input wire                  LLbit_i,
+	// 但不一定是最新值，回写阶段可能要写LLbit，所以还要进一步判断
 	input wire                  wb_LLbit_we_i,
 	input wire                  wb_LLbit_value_i,
 
-	
+	// 协处理器CP0的写信号
 	input wire                   cp0_reg_we_i,
 	input wire[4:0]              cp0_reg_write_addr_i,
 	input wire[`RegBus]          cp0_reg_data_i,
@@ -30,17 +34,17 @@ module mem(
 	input wire                   is_in_delayslot_i,
 	input wire[`RegBus]          current_inst_address_i,	
 	
-	
+	// CP0的各个寄存器的值，但不一定是最新的值，要防止回写阶段指令写CP0
 	input wire[`RegBus]          cp0_status_i,
 	input wire[`RegBus]          cp0_cause_i,
 	input wire[`RegBus]          cp0_epc_i,
 
-	
+	// 回写阶段的指令是否要写CP0，用来检测数据相关
   input wire                    wb_cp0_reg_we,
 	input wire[4:0]               wb_cp0_reg_write_addr,
 	input wire[`RegBus]           wb_cp0_reg_data,
 	
-	
+	// 送到回写阶段的信息
 	output reg[`RegAddrBus]      wd_o,
 	output reg                   wreg_o,
 	output reg[`RegBus]					 wdata_o,
@@ -84,7 +88,7 @@ module mem(
 	assign current_inst_address_o = current_inst_address_i;
 	assign cp0_epc_o = cp0_epc;
 
-  
+  //获取最新的LLbit的值
 	always @ (*) begin
 		if(rst == `RstEnable) begin
 			LLbit <= 1'b0;
@@ -396,7 +400,7 @@ module mem(
 					end
 				end				
 				default:		begin
-       
+          //什么也不做
 				end
 			endcase							
 		end    //if
