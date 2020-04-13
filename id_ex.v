@@ -1,11 +1,12 @@
+
 `include "defines.v"
 
 module id_ex(
 
-	input	wire				 clk,
-	input wire					 rst,
+	input	wire										clk,
+	input wire										rst,
 
-	input wire[5:0]				 stall,
+	input wire[5:0]							 stall,
 	input wire                   flush,
 	
 	input wire[`AluOpBus]         id_aluop,
