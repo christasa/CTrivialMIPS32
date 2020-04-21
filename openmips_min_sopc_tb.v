@@ -9,8 +9,9 @@ module openmips_min_sopc_tb();
        
   initial begin
     CLOCK_50 = 1'b0;
-    forever #10 CLOCK_50 = ~CLOCK_50;
   end
+
+  always #10 CLOCK_50 = ~CLOCK_50;
       
   initial begin
     rst = `RstEnable;

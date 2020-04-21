@@ -3,8 +3,8 @@
 
 module pc_reg(
 
-	input	wire										clk,
-	input wire										rst,
+	input	wire	clk,
+	input wire		rst,
 
 	//来自控制模块的信息
 	input wire[5:0]               stall,
@@ -22,7 +22,7 @@ module pc_reg(
 
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
-			pc <= 32'h00000000;
+			pc <= 32'h30000000;  // flash 从0x30000000开始读指令
 		end else begin
 			if(flush == 1'b1) begin
 				pc <= new_pc;

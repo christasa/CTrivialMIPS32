@@ -3,16 +3,16 @@
 
 module openmips(
 
-	input	wire										clk,
-	input wire										rst,
+	input wire	clk,
+	input wire		rst,
 	
-  input wire[5:0]                int_i,
+    input wire[5:0]                int_i,
   
 	input wire[`RegBus]           rom_data_i,
 	output wire[`RegBus]           rom_addr_o,
 	output wire                    rom_ce_o,
 	
-  //连接数据存储器data_ram
+    //连接数据存储器data_ram
 	input wire[`RegBus]           ram_data_i,
 	output wire[`RegBus]           ram_addr_o,
 	output wire[`RegBus]           ram_data_o,
@@ -36,10 +36,10 @@ module openmips(
 	wire id_wreg_o;
 	wire[`RegAddrBus] id_wd_o;
 	wire id_is_in_delayslot_o;
-  wire[`RegBus] id_link_address_o;	
-  wire[`RegBus] id_inst_o;
-  wire[31:0] id_excepttype_o;
-  wire[`RegBus] id_current_inst_address_o;
+    wire[`RegBus] id_link_address_o;	
+    wire[`RegBus] id_inst_o;
+    wire[31:0] id_excepttype_o;
+    wire[`RegBus] id_current_inst_address_o;
 	
 	// 连接ID/EX模块的输出与执行阶段EX模块的输入
 	wire[`AluOpBus] ex_aluop_i;
@@ -181,7 +181,7 @@ module openmips(
 		.rst(rst),
 		.stall(stall),
 		.flush(flush),
-	  .new_pc(new_pc),
+	  	.new_pc(new_pc),
 		.branch_flag_i(id_branch_flag_o),
 		.branch_target_address_i(branch_target_address),		
 		.pc(pc),

@@ -1,14 +1,13 @@
-
 `include "defines.v"
 
 module openmips_min_sopc(
 
-	input	wire										clk,
-	input wire										rst
+	input wire	clk,
+	input wire	rst
 	
 );
 
-  //连接指令存储器
+  // 连接指令存储器
   wire[`InstAddrBus] inst_addr;
   wire[`InstBus] inst;
   wire rom_ce;
@@ -21,7 +20,6 @@ module openmips_min_sopc(
   wire[5:0] int;
   wire timer_int;
  
-  //assign int = {5'b00000, timer_int, gpio_int, uart_int};
   assign int = {5'b00000, timer_int};
 
  openmips openmips0(
@@ -32,7 +30,7 @@ module openmips_min_sopc(
 		.rom_data_i(inst),
 		.rom_ce_o(rom_ce),
 
-    .int_i(int),
+    	.int_i(int),
 
 		.ram_we_o(mem_we_i),
 		.ram_addr_o(mem_addr_i),
