@@ -24,40 +24,38 @@ module nexys_ddr_top(
     // ???
 
     //RAM信号
-	inout [15:0]			ddr2_dq,
-	inout [1:0]				ddr2_dqs_n,
-	inout [1:0]				ddr2_dqs_p,
-	output [12:0]			ddr2_addr,
-	output [2:0]			ddr2_ba,
-	output					ddr2_ras_n,
-	output					ddr2_cas_n,
-	output					ddr2_we_n,
-	output [0:0]			ddr2_ck_p,
-	output [0:0]			ddr2_ck_n,
-	output [0:0]			ddr2_cke,
-	output [0:0]			ddr2_cs_n,
-	output [1:0]			ddr2_dm,
-	output [0:0]			ddr2_odt
+	inout wire [15:0]	ddr2_dq,
+	inout wire [1:0]		ddr2_dqs_n,
+	inout wire [1:0]		ddr2_dqs_p,
+	output reg [12:0]	ddr2_addr,
+	output reg [2:0]	ddr2_ba,
+	output reg 	ddr2_ras_n,
+	output reg 	ddr2_cas_n,
+	output reg 	ddr2_we_n,
+	output reg [0:0]	ddr2_ck_p,
+	output reg [0:0]	ddr2_ck_n,
+	output reg [0:0]	ddr2_cke,
+	output reg [0:0]	ddr2_cs_n,
+	output reg [1:0]	ddr2_dm,
+	output reg [0:0]	ddr2_odt,
 
     // 直连串口信号
     output wire UART_TXD_IN,   // 直连串口写入数据
     input wire UART_TXD, // 直连串口接收数据
-    output reg UART_CTS, // 串口发送数据信号，0是有效，1是无效
+    output wire UART_CTS, // 串口发送数据信号，0是有效，1是无效
     input wire UART_RTS, // 串口接受数据信号
 
 
 
     // SPI Flash存储信号
+    input  wire    sdi,
     output reg  cs_n,
-    input       sdi,
     output reg  sdo,
-    output      wp_n,
-    output      hld_n,
+    output reg    wp_n,
+    output reg     hld_n,
 
 );
 
-assign wp_n  = 1'b1;
-assign hld_n = 1'b1;
 
 // 数码管连接关系示意图，dpy1同理
 // p=SSEG_CA[0] // ---a---
@@ -75,13 +73,13 @@ Disp disp(.clk(clk_50M), .sseg_ca(SSEG_CA), .sseg_an(SSEG_AN), .number(number));
 
 
 
-
+reg init_calib_complete;
 reg app_en; // 指令使能，当app_addr和app_cmd都准备好后，将其拉高来送出指令
 reg app_wdf_wren; // 写使能，当数据准备好时，将此信号拉高
 reg app_wdf_end; // 写数据末端信号，当输入的数据是最后一个时，将此信号拉高，表示数据已送完
 reg [2:0] app_cmd; // 用户指令，3’b001为读，3’b000为写
 reg [26:0] app_addr;  // 数据地址，从高位到低位分别是 bank 4位，行地址13位和列地址10位
-reg [127:0] app_wdf_data; // 写数据，他会先经过app_wdf_mask，将指定部分覆盖为全1后送出
+wire [127:0] app_wdf_data; // 写数据，他会先经过app_wdf_mask，将指定部分覆盖为全1后送出
 wire [127:0] app_rd_data;  // 读数据
 wire [15:0] app_wdf_mask;  // 写数据mask，16位的mask，每一位对应数据中的8位，当mask的[0]为高时，app_wdf_data[7:0]送入DDR时会变成全1；当mask的[15]为高时，app_wdf_data[127:120]送入DDR时会变成全1
 wire app_rdy; // 指令接收信号，此信号升高表示送入的指令已经被接受。如果迟迟不升高，有可能DDR在初始化，或者FIFO已满无法在读写，或者正在处理其他的读操作
@@ -98,7 +96,7 @@ wire app_zq_ack; // 该信号升高表示ZQ校准指令被确认
 reg[15:0] led_bits = 16'b0000_0000_0000_0000;
 assign LED = led_bits;
 
-always @(posedge CPU_RESETN or ) begin
+always @(posedge CPU_RESETN) begin
 	if (CPU_RESETN) begin  // 重置LED和显示管
 		number <= 0;
 		led_bits <= 16'h1; // 重置LED
@@ -156,7 +154,9 @@ sdram_ddr u_ddr (
 
 
 reg [`RegBus] digit_data;
-reg [`RegBus] write_data = app_wdf_data[`RegBus];
+reg [`RegBus] write_data;
+
+assign app_wdf_data[`RegBus] = write_data;
 
 always@ (posedge clk_50M) begin
 		if (SW[3]) begin
@@ -226,7 +226,7 @@ reg serial_read_status = 1'b0;
 reg already_read_status = 1'b0;
 reg[7:0] serial_read_data;
 always @(posedge ext_uart_ready) begin   
-    if (reset_btn) begin 
+    if (CPU_RESETN) begin 
         serial_read_status <= 1'b0;
     end else begin
         serial_read_status <= ~serial_read_status;

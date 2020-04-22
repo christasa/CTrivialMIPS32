@@ -41,72 +41,72 @@ always @(posedge clk_sys ) begin
                 SEG1: begin
                     if(sel[7]) begin//第1个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b01111111;
+                        sseg_an[7:0] <= 8'b01111111;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG2;
                 end
                 SEG2: begin
                     if(sel[6] ) begin//第2个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b10111111;
+                        sseg_an[7:0] <= 8'b10111111;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG3;
                 end
                 SEG3: begin
                     if(sel[5] ) begin//第3个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11011111;
+                        sseg_an[7:0] <= 8'b11011111;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG4;
                 end
                 SEG4: begin
                     if(sel[4] ) begin//第4个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11101111;
+                        sseg_an[7:0] <= 8'b11101111;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG5;
                 end
                 SEG5: begin
                     if(sel[3] ) begin//第5个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11110111;
+                        sseg_an[7:0] <= 8'b11110111;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG6;
                 end
                 SEG6: begin
                     if(sel[2] ) begin//第6个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11111011;
+                        sseg_an[7:0] <= 8'b11111011;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG7;
                 end
                 SEG7: begin
                     if(sel[1]) begin//第7个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11111101;
+                        sseg_an[7:0] <= 8'b11111101;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG8;
                 end
                 SEG8: begin
                     if(sel[0] ) begin//第8个数码管选通
                         value <= 4'b0001;
-                        an[7:0] <= 8'b11111110;
+                        sseg_an[7:0] <= 8'b11111110;
                     end else begin
-                        an[7:0] <= 8'b11111111;
+                        sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG1;
                 end
