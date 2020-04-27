@@ -5,7 +5,10 @@
 初步的数据流图如下:
 ![avater](img/MIPS32.png)
 
+
 初步设计出为五级流水型CPU，使用的FPGA板子为Nexy4s DDR2
+
+
 ![banner](img/FPGA_banner.png)
 
 ## 大致结构
