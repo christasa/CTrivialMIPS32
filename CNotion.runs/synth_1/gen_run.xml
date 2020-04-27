@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1588003368">
+  <File Type="PA-TCL" Name="nexys_ddr_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="nexys_ddr_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="nexys_ddr_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="nexys_ddr_top.vds"/>
+  <File Type="RDS-UTIL" Name="nexys_ddr_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="nexys_ddr_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="nexys_ddr_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="nexys_ddr_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="nexys_ddr_top_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/Disp.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/Disp.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/defines.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/defines.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/LLbit_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/LLbit_reg.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/async.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/async.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/cp0_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/cp0_reg.v"/>
+        <Attr Name="ImportTime" Val="1585235811"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/ctrl.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/ctrl.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/data_ram.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/data_ram.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/div.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/div.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/ex.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/ex.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/ex_mem.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/ex_mem.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/hilo_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/hilo_reg.v"/>
+        <Attr Name="ImportTime" Val="1585235811"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/id.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/id.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/id_ex.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/id_ex.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/if_id.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/if_id.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/inst_rom.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/inst_rom.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/mem.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/mem.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/mem_wb.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/mem_wb.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/openmips.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/openmips.v"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/pc_reg.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/pc_reg.v"/>
+        <Attr Name="ImportTime" Val="1587488501"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/regfile.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/regfile.v"/>
+        <Attr Name="ImportTime" Val="1587488501"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/data_output.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/sdram_ddr/mig_a.prj">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="ScopedToCell" Val="sdram_ddr"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/rom.data">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../rom.data"/>
+        <Attr Name="ImportTime" Val="1587565097"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="nexys_ddr_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../CNotion_MIPS32/Nexys-4-DDR-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1587488500"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="sdram_ddr"/>
+</GenRun>

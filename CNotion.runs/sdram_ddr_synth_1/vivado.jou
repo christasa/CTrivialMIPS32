@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Apr 22 00:58:56 2020
+# Process ID: 14548
+# Current directory: D:/coding/vivado/CNotion/CNotion.runs/sdram_ddr_synth_1
+# Command line: vivado.exe -log sdram_ddr.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sdram_ddr.tcl
+# Log file: D:/coding/vivado/CNotion/CNotion.runs/sdram_ddr_synth_1/sdram_ddr.vds
+# Journal file: D:/coding/vivado/CNotion/CNotion.runs/sdram_ddr_synth_1\vivado.jou
+#-----------------------------------------------------------
+source sdram_ddr.tcl -notrace

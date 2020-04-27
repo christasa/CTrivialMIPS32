@@ -1,0 +1,1454 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Tue Apr 28 00:02:50 2020
+# Process ID: 12628
+# Current directory: D:/coding/vivado/CNotion/CNotion.runs/synth_1
+# Command line: vivado.exe -log nexys_ddr_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_ddr_top.tcl
+# Log file: D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.vds
+# Journal file: D:/coding/vivado/CNotion/CNotion.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source nexys_ddr_top.tcl -notrace
+Command: synth_design -top nexys_ddr_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13820 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 390.629 ; gain = 92.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys_ddr_top' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
+	Parameter cnt_init bound to: 16'b0000000000000001 
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:108]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:109]
+INFO: [Synth 8-6157] synthesizing module 'Disp' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
+	Parameter SEG1 bound to: 3'b000 
+	Parameter SEG2 bound to: 3'b001 
+	Parameter SEG3 bound to: 3'b010 
+	Parameter SEG4 bound to: 3'b011 
+	Parameter SEG5 bound to: 3'b100 
+	Parameter SEG6 bound to: 3'b101 
+	Parameter SEG7 bound to: 3'b110 
+	Parameter SEG8 bound to: 3'b111 
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:40]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:122]
+INFO: [Synth 8-6155] done synthesizing module 'Disp' (1#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-12628-Chris/realtime/sdram_ddr_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sdram_ddr' (2#1) [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-12628-Chris/realtime/sdram_ddr_stub.v:5]
+WARNING: [Synth 8-689] width (13) of port connection 'ddr2_addr' does not match port width (14) of module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:182]
+WARNING: [Synth 8-350] instance 'u_ddr' of module 'sdram_ddr' requires 38 connections, but only 36 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:178]
+INFO: [Synth 8-6157] synthesizing module 'async_receiver' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:75]
+	Parameter ClkFrequency bound to: 50000000 - type: integer 
+	Parameter Baud bound to: 115200 - type: integer 
+	Parameter Oversampling bound to: 8 - type: integer 
+	Parameter l2o bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+	Parameter ClkFrequency bound to: 50000000 - type: integer 
+	Parameter Baud bound to: 115200 - type: integer 
+	Parameter Oversampling bound to: 8 - type: integer 
+	Parameter AccWidth bound to: 17 - type: integer 
+	Parameter ShiftLimiter bound to: 6 - type: integer 
+	Parameter Inc bound to: 2416 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen' (3#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+INFO: [Synth 8-6155] done synthesizing module 'async_receiver' (4#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:75]
+WARNING: [Synth 8-350] instance 'ext_uart_r' of module 'async_receiver' requires 7 connections, but only 5 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:285]
+INFO: [Synth 8-6157] synthesizing module 'async_transmitter' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:14]
+	Parameter ClkFrequency bound to: 50000000 - type: integer 
+	Parameter Baud bound to: 115200 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen__parameterized0' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+	Parameter ClkFrequency bound to: 50000000 - type: integer 
+	Parameter Baud bound to: 115200 - type: integer 
+	Parameter Oversampling bound to: 1 - type: integer 
+	Parameter AccWidth bound to: 17 - type: integer 
+	Parameter ShiftLimiter bound to: 3 - type: integer 
+	Parameter Inc bound to: 302 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen__parameterized0' (4#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+INFO: [Synth 8-6155] done synthesizing module 'async_transmitter' (5#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:14]
+INFO: [Synth 8-6157] synthesizing module 'openmips' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v:4]
+INFO: [Synth 8-6157] synthesizing module 'pc_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/pc_reg.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (6#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/pc_reg.v:4]
+INFO: [Synth 8-6157] synthesizing module 'if_id' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/if_id.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'if_id' (7#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/if_id.v:5]
+INFO: [Synth 8-6157] synthesizing module 'id' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'id' (8#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id.v:3]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/regfile.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (9#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/regfile.v:4]
+INFO: [Synth 8-6157] synthesizing module 'id_ex' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id_ex.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'id_ex' (10#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id_ex.v:4]
+INFO: [Synth 8-6157] synthesizing module 'ex' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ex' (11#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ex_mem' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex_mem.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ex_mem' (12#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex_mem.v:3]
+INFO: [Synth 8-6157] synthesizing module 'mem' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:3]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:143]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:169]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:239]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:262]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:294]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:340]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:366]
+INFO: [Synth 8-6155] done synthesizing module 'mem' (13#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:3]
+WARNING: [Synth 8-689] width (4) of port connection 'mem_ce_o' does not match port width (1) of module 'mem' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v:508]
+INFO: [Synth 8-6157] synthesizing module 'mem_wb' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem_wb.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'mem_wb' (14#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem_wb.v:3]
+INFO: [Synth 8-6157] synthesizing module 'hilo_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/hilo_reg.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'hilo_reg' (15#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/hilo_reg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'ctrl' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ctrl.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl' (16#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ctrl.v:4]
+INFO: [Synth 8-6157] synthesizing module 'div' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/div.v:4]
+WARNING: [Synth 8-6014] Unused sequential element temp_op1_reg was removed.  [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/div.v:44]
+WARNING: [Synth 8-6014] Unused sequential element temp_op2_reg was removed.  [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/div.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'div' (17#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/div.v:4]
+INFO: [Synth 8-6157] synthesizing module 'LLbit_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/LLbit_reg.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'LLbit_reg' (18#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/LLbit_reg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'cp0_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'cp0_reg' (19#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'openmips' (20#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v:4]
+WARNING: [Synth 8-689] width (1) of port connection 'ram_ce_o' does not match port width (4) of module 'openmips' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:344]
+INFO: [Synth 8-6157] synthesizing module 'inst_rom' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:3]
+INFO: [Synth 8-3876] $readmem data file 'rom.data' is read successfully [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'inst_rom' (21#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_ram' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/data_ram.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'data_ram' (22#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/data_ram.v:4]
+WARNING: [Synth 8-6014] Unused sequential element serial_read_data_reg was removed.  [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:314]
+WARNING: [Synth 8-3848] Net RGB1_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:16]
+WARNING: [Synth 8-3848] Net RGB1_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:17]
+WARNING: [Synth 8-3848] Net RGB1_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:18]
+WARNING: [Synth 8-3848] Net RGB2_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:19]
+WARNING: [Synth 8-3848] Net RGB2_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:20]
+WARNING: [Synth 8-3848] Net RGB2_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:21]
+WARNING: [Synth 8-3848] Net ext_uart_start in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:257]
+WARNING: [Synth 8-3848] Net cs_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:52]
+WARNING: [Synth 8-3848] Net sdo in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:53]
+WARNING: [Synth 8-3848] Net wp_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:54]
+WARNING: [Synth 8-3848] Net hld_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:55]
+WARNING: [Synth 8-3848] Net ext_uart_tx in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:255]
+WARNING: [Synth 8-3848] Net mem_data_i in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:232]
+WARNING: [Synth 8-3848] Net ram_data_o in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:235]
+INFO: [Synth 8-6155] done synthesizing module 'nexys_ddr_top' (23#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[31]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[30]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[29]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[28]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[27]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[26]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[25]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[24]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[23]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[22]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[21]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[20]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[19]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[1]
+WARNING: [Synth 8-3331] design data_ram has unconnected port addr[0]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[31]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[30]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[29]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[28]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[27]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[26]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[25]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[24]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[23]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[22]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[21]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[20]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[19]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[1]
+WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[0]
+WARNING: [Synth 8-3331] design mem_wb has unconnected port stall[3]
+WARNING: [Synth 8-3331] design mem_wb has unconnected port stall[2]
+WARNING: [Synth 8-3331] design mem_wb has unconnected port stall[1]
+WARNING: [Synth 8-3331] design mem_wb has unconnected port stall[0]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[31]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[30]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[29]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[28]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[27]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[26]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[25]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[24]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[23]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[22]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[21]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[20]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[19]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[18]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[17]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[16]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[15]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[14]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[13]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[7]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[6]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[5]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[4]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[3]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[2]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[1]
+WARNING: [Synth 8-3331] design mem has unconnected port excepttype_i[0]
+WARNING: [Synth 8-3331] design ex_mem has unconnected port stall[5]
+WARNING: [Synth 8-3331] design ex_mem has unconnected port stall[2]
+WARNING: [Synth 8-3331] design ex_mem has unconnected port stall[1]
+WARNING: [Synth 8-3331] design ex_mem has unconnected port stall[0]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[31]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[30]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[29]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[28]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[27]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[26]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[25]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[24]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[23]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[22]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[21]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[20]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[19]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[18]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[17]
+WARNING: [Synth 8-3331] design ex has unconnected port inst_i[16]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[11]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[10]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[7]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[6]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[5]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[4]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[3]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[2]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[1]
+WARNING: [Synth 8-3331] design ex has unconnected port excepttype_i[0]
+WARNING: [Synth 8-3331] design id_ex has unconnected port stall[5]
+WARNING: [Synth 8-3331] design id_ex has unconnected port stall[4]
+WARNING: [Synth 8-3331] design id_ex has unconnected port stall[1]
+WARNING: [Synth 8-3331] design id_ex has unconnected port stall[0]
+WARNING: [Synth 8-3331] design if_id has unconnected port stall[5]
+WARNING: [Synth 8-3331] design if_id has unconnected port stall[4]
+WARNING: [Synth 8-3331] design if_id has unconnected port stall[3]
+WARNING: [Synth 8-3331] design if_id has unconnected port stall[0]
+WARNING: [Synth 8-3331] design pc_reg has unconnected port stall[5]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 484.883 ; gain = 187.148
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[31] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[30] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[29] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[28] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[27] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[26] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[25] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[24] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[23] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[22] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[21] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[20] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[19] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[18] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[17] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[16] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[15] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[14] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[13] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[12] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[11] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[10] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[9] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[8] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[7] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[6] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[5] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[4] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[3] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[2] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[1] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[0] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[31] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[30] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[29] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[28] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[27] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[26] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[25] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[24] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[23] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[22] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[21] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[20] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[19] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[18] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[17] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[16] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[15] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[14] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[13] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[12] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[11] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[10] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[9] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[8] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[7] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[6] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[5] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[4] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[3] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[2] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[1] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[0] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 484.883 ; gain = 187.148
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 484.883 ; gain = 187.148
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc] for cell 'u_ddr'
+Finished Parsing XDC File [d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc] for cell 'u_ddr'
+Parsing XDC File [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc]
+WARNING: [Vivado 12-507] No nets matched 'CPU_RESETN_IBUF'. [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc:9]
+Finished Parsing XDC File [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/nexys_ddr_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_ddr_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_ddr_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.414 ; gain = 0.000
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 853.414 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 853.414 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 853.414 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 2).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[10]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[10]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[11]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[11]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[12]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[12]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[3]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[3]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[4]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[4]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[5]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[5]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[6]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[6]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[7]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[7]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[8]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[8]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_addr[9]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_addr[9]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ba[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ba[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ba[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ba[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ba[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ba[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_cas_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_cas_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ck_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ck_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ck_p[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ck_p[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_cke[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_cke[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_cs_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_cs_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dm[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dm[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dm[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dm[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[10]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[10]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[11]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[11]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[12]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[12]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[13]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[13]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[14]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[14]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[15]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[15]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[2]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[3]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[3]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[4]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[4]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[5]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[5]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[6]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[6]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[7]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[7]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[8]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[8]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dq[9]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dq[9]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dqs_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dqs_n[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dqs_n[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dqs_n[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dqs_p[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dqs_p[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_dqs_p[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_dqs_p[1]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_odt[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_odt[0]. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_ras_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_ras_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 95).
+Applied set_property DONT_TOUCH = true for u_ddr. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Disp'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'RxD_state_reg' in module 'async_receiver'
+INFO: [Synth 8-5544] ROM "RxD_bit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RxD_bit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "OversamplingCnt0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'TxD_state_reg' in module 'async_transmitter'
+INFO: [Synth 8-5545] ROM "reg1_read_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "reg1_read_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg1_read_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "reg1_read_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "reg2_read_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5587] ROM size for "reg2_read_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "reg2_read_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "aluop_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "aluop_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "aluop_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "aluop_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "alusel_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "alusel_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "alusel_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "alusel_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "wreg_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5587] ROM size for "wreg_o" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5545] ROM "wreg_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "wreg_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "branch_flag_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "excepttype_is_eret" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "instvalid" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "excepttype_is_syscall" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "instvalid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "instvalid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "instvalid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cp0_reg_we_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "signed_div_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "hilo_temp_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cnt_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stallreq_for_madd_msub" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "cp0_reg_read_addr_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:283]
+INFO: [Synth 8-5546] ROM "cp0_reg_we_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "signed_div_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "hilo_temp_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cnt_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "stallreq_for_madd_msub" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "cp0_reg_read_addr_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LLbit_value_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "LLbit_value_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "mem_sel_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_sel_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_sel_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_sel_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "mem_sel_o" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cp0_cause" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "new_pc" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'div'
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "compare_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "status_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cause_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "epc_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "data_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "inst_mem" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'app_wdf_wren_reg' into 'app_wdf_end_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:127]
+INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "app_addr" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "app_cmd" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "app_wdf_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    SEG1 |                              000 |                              000
+                    SEG2 |                              001 |                              001
+                    SEG3 |                              010 |                              010
+                    SEG4 |                              011 |                              011
+                    SEG5 |                              100 |                              100
+                    SEG6 |                              101 |                              101
+                    SEG7 |                              110 |                              110
+                    SEG8 |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Disp'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE5 |                      00000000001 |                             0000
+                 iSTATE4 |                      00000000010 |                             0001
+                 iSTATE7 |                      00000000100 |                             1000
+                 iSTATE6 |                      00000001000 |                             1001
+                 iSTATE3 |                      00000010000 |                             1010
+                 iSTATE1 |                      00000100000 |                             1011
+                 iSTATE2 |                      00001000000 |                             1100
+                  iSTATE |                      00010000000 |                             1101
+                 iSTATE9 |                      00100000000 |                             1110
+                 iSTATE8 |                      01000000000 |                             1111
+                 iSTATE0 |                      10000000000 |                             0010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'RxD_state_reg' using encoding 'one-hot' in module 'async_receiver'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE5 |                      00000000001 |                             0000
+                  iSTATE |                      00000000010 |                             0100
+                 iSTATE7 |                      00000000100 |                             1000
+                 iSTATE6 |                      00000001000 |                             1001
+                 iSTATE4 |                      00000010000 |                             1010
+                 iSTATE2 |                      00000100000 |                             1011
+                 iSTATE3 |                      00001000000 |                             1100
+                 iSTATE0 |                      00010000000 |                             1101
+                 iSTATE9 |                      00100000000 |                             1110
+                 iSTATE8 |                      01000000000 |                             1111
+                 iSTATE1 |                      10000000000 |                             0010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'TxD_state_reg' using encoding 'one-hot' in module 'async_transmitter'
+WARNING: [Synth 8-327] inferring latch for variable 'reg1_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id.v:685]
+WARNING: [Synth 8-327] inferring latch for variable 'reg2_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/id.v:707]
+WARNING: [Synth 8-327] inferring latch for variable 'cp0_reg_read_addr_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:443]
+WARNING: [Synth 8-327] inferring latch for variable 'hilo_temp1_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:331]
+WARNING: [Synth 8-327] inferring latch for variable 'hilo_temp_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:320]
+WARNING: [Synth 8-327] inferring latch for variable 'cnt_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:321]
+WARNING: [Synth 8-327] inferring latch for variable 'stallreq_for_madd_msub_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v:322]
+WARNING: [Synth 8-327] inferring latch for variable 'cp0_cause_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:433]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_data_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/mem.v:115]
+WARNING: [Synth 8-327] inferring latch for variable 'new_pc_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ctrl.v:27]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                  iSTATE |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'div'
+WARNING: [Synth 8-327] inferring latch for variable 'data_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:155]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 4     
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 13    
+	   2 Input     18 Bit       Adders := 2     
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 30    
+	               27 Bit    Registers := 1     
+	               18 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 7     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 5     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 24    
++---RAMs : 
+	            1023K Bit         RAMs := 4     
+	             1024 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   2 Input     65 Bit        Muxes := 5     
+	   4 Input     65 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 10    
+	   3 Input     64 Bit        Muxes := 2     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 78    
+	  11 Input     32 Bit        Muxes := 3     
+	   8 Input     32 Bit        Muxes := 1     
+	  33 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 7     
+	   3 Input     32 Bit        Muxes := 4     
+	   9 Input     32 Bit        Muxes := 1     
+	  15 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 2     
+	   6 Input     32 Bit        Muxes := 3     
+	  73 Input     32 Bit        Muxes := 1     
+	   7 Input     24 Bit        Muxes := 1     
+	   3 Input     18 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 6     
+	  11 Input     11 Bit        Muxes := 2     
+	   2 Input     11 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 17    
+	   8 Input      8 Bit        Muxes := 2     
+	  33 Input      8 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	  28 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	  11 Input      7 Bit        Muxes := 1     
+	  33 Input      6 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 13    
+	  11 Input      5 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 3     
+	  11 Input      4 Bit        Muxes := 2     
+	  15 Input      4 Bit        Muxes := 2     
+	   8 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 7     
+	   8 Input      3 Bit        Muxes := 6     
+	  28 Input      3 Bit        Muxes := 1     
+	  11 Input      3 Bit        Muxes := 1     
+	  33 Input      3 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 6     
+	   4 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 11    
+	  33 Input      2 Bit        Muxes := 1     
+	  27 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 12    
+	   2 Input      1 Bit        Muxes := 96    
+	  11 Input      1 Bit        Muxes := 6     
+	  28 Input      1 Bit        Muxes := 4     
+	  33 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 3     
+	   7 Input      1 Bit        Muxes := 5     
+	   6 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 4     
+	  15 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module nexys_ddr_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 2     
+	               27 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input    128 Bit        Muxes := 1     
+	   3 Input     18 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 17    
+	   4 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+Module Disp 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 8     
+	   8 Input      8 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+Module BaudTickGen 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+Module async_receiver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	  11 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+	  11 Input      1 Bit        Muxes := 1     
+Module BaudTickGen__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     18 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 1     
+Module async_transmitter 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	  11 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  11 Input      4 Bit        Muxes := 1     
+	  11 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module pc_reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+Module if_id 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module id 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 14    
+	  11 Input     32 Bit        Muxes := 3     
+	   8 Input     32 Bit        Muxes := 1     
+	  33 Input     32 Bit        Muxes := 1     
+	   5 Input     32 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
+	  33 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 6     
+	   4 Input      8 Bit        Muxes := 1     
+	  28 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	  11 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 10    
+	  11 Input      5 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 3     
+	   8 Input      3 Bit        Muxes := 5     
+	  28 Input      3 Bit        Muxes := 1     
+	  11 Input      3 Bit        Muxes := 1     
+	  33 Input      3 Bit        Muxes := 5     
+	   2 Input      3 Bit        Muxes := 6     
+	   4 Input      3 Bit        Muxes := 1     
+	  33 Input      2 Bit        Muxes := 1     
+	  27 Input      2 Bit        Muxes := 1     
+	  28 Input      1 Bit        Muxes := 4     
+	   8 Input      1 Bit        Muxes := 9     
+	  11 Input      1 Bit        Muxes := 4     
+	  33 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 17    
+	   4 Input      1 Bit        Muxes := 5     
+	   5 Input      1 Bit        Muxes := 2     
+Module regfile 
+Detailed RTL Component Info : 
++---RAMs : 
+	             1024 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+Module id_ex 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 6     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module ex 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 4     
+	   2 Input     32 Bit       Adders := 4     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 7     
+	   3 Input     64 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 27    
+	   4 Input     32 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 2     
+	   3 Input     32 Bit        Muxes := 2     
+	  33 Input      6 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   7 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 4     
+Module ex_mem 
+Detailed RTL Component Info : 
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 8     
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+Module mem 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 5     
+	   3 Input     32 Bit        Muxes := 1     
+	   9 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 12    
+	  15 Input     32 Bit        Muxes := 1     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  15 Input      4 Bit        Muxes := 2     
+	   8 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	  15 Input      1 Bit        Muxes := 5     
+Module mem_wb 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 4     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module hilo_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+Module ctrl 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   7 Input     32 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 1     
+Module div 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input      6 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               65 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     65 Bit        Muxes := 5     
+	   4 Input     65 Bit        Muxes := 2     
+	   2 Input     64 Bit        Muxes := 1     
+	   4 Input     64 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input      6 Bit        Muxes := 1     
+	   4 Input      6 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 6     
+Module LLbit_reg 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module cp0_reg 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
++---Registers : 
+	               32 Bit    Registers := 6     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   6 Input     32 Bit        Muxes := 3     
+	   3 Input     32 Bit        Muxes := 1     
+	   7 Input     32 Bit        Muxes := 1     
+	   7 Input     24 Bit        Muxes := 1     
+	   7 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   6 Input      1 Bit        Muxes := 4     
+	   7 Input      1 Bit        Muxes := 3     
+	   8 Input      1 Bit        Muxes := 1     
+Module inst_rom 
+Detailed RTL Component Info : 
++---Muxes : 
+	  73 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+Module data_ram 
+Detailed RTL Component Info : 
++---RAMs : 
+	            1023K Bit         RAMs := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "excepttype_is_syscall" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "instvalid" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "reg1_read_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "reg2_read_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "aluop_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "aluop_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "aluop_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "alusel_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "wreg_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "wreg_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "instvalid" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "excepttype_is_eret" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "cp0_reg_we_o" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cp0_reg_read_addr_o" won't be mapped to RAM because it is too sparse
+DSP Report: Generating DSP hilo_temp, operation Mode is: A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: Generating DSP hilo_temp, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+DSP Report: operator hilo_temp is absorbed into DSP hilo_temp.
+INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-6014] Unused sequential element data_ram0/data_mem0_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element data_ram0/data_mem1_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element data_ram0/data_mem2_reg was removed. 
+WARNING: [Synth 8-6014] Unused sequential element data_ram0/data_mem3_reg was removed. 
+INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "p_0_out" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "app_wdf_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/sseg_ca" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[7]' (FDE) to 'ext_uart_tx_reg_reg[6]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[6]' (FDE) to 'ext_uart_tx_reg_reg[5]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[5]' (FDE) to 'ext_uart_tx_reg_reg[4]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[4]' (FDE) to 'ext_uart_tx_reg_reg[3]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[3]' (FDE) to 'ext_uart_tx_reg_reg[2]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[2]' (FDE) to 'ext_uart_tx_reg_reg[1]'
+INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[1]' (FDE) to 'ext_uart_tx_reg_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_tx_reg_reg[0] )
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[0]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[1]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[2]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[3]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[4]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[5]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[6]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[7]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[8]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[9]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[10]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[11]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[12]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[13]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[14]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[15]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[16]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[17]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[18]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[19]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[20]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[21]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[22]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[23]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[24]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[25]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[26]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[27]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[28]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[29]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[30]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[31]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[32]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[33]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[34]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[35]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[36]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[37]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[38]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[39]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[40]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[41]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[42]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[43]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[44]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[45]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[46]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[47]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[48]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[49]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[50]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[51]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[52]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[53]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[54]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[55]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[56]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[57]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[58]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[59]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[60]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[61]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[62]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[63]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[64]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[65]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[66]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[67]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[68]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[69]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[70]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[71]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[72]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[73]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[74]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[75]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[76]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[77]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[78]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[79]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[80]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[81]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[82]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[83]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[84]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[85]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[86]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[87]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[88]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[89]' (FDCE) to 'app_wdf_data_reg[124]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[90]' (FDCE) to 'app_wdf_data_reg[126]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[91]' (FDCE) to 'app_wdf_data_reg[127]'
+INFO: [Synth 8-3886] merging instance 'app_wdf_data_reg[92]' (FDCE) to 'app_wdf_data_reg[109]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_wdf_data_reg[126] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_cmd_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_addr_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\number_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp/value_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\led_bits_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[7] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\disp/sseg_an_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp/value_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[0] )
+WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[2]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[1]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[0]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[10]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[9]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[8]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[7]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[6]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[5]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[4]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[3]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[2]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[1]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[0]) is unused and will be removed from module nexys_ddr_top.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[31]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[30]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[29]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[28]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[27]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[26]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[25]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[24]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[23]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[22]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[21]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[20]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[19]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[18]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[17]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[16]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[15]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[14]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[13]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[12]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[11]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[10]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[9]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[8]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[7]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[6]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[5]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[4]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[3]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[2]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[1]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg1_o_reg[0]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[31]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[30]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[29]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[28]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[27]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[26]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[25]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[24]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[23]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[22]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[21]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[20]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[19]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[18]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[17]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[16]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[15]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[14]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[13]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[12]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[11]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[10]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[9]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[8]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[7]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[6]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[5]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[4]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[3]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[2]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[1]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (reg2_o_reg[0]) is unused and will be removed from module id.
+WARNING: [Synth 8-3332] Sequential element (cp0_reg_read_addr_o_reg[4]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (cp0_reg_read_addr_o_reg[3]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (cp0_reg_read_addr_o_reg[2]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (cp0_reg_read_addr_o_reg[1]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (cp0_reg_read_addr_o_reg[0]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[63]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[62]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[61]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[60]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[59]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[58]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[57]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[56]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[55]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[54]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[53]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[52]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[51]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[50]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[49]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[48]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[47]) is unused and will be removed from module ex.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|ex          | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|ex          | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'u_ddr/ui_clk' to pin 'u_ddr/bbstub_ui_clk/O'
+INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |sdram_ddr     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |sdram_ddr |     1|
+|2     |BUFG      |     1|
+|3     |CARRY4    |    31|
+|4     |LUT1      |     6|
+|5     |LUT2      |     7|
+|6     |LUT3      |    88|
+|7     |LUT4      |     2|
+|8     |LUT5      |     6|
+|9     |LUT6      |    17|
+|10    |FDCE      |    25|
+|11    |FDPE      |     1|
+|12    |FDRE      |   154|
+|13    |FDSE      |     6|
+|14    |IBUF      |     2|
+|15    |OBUF      |    34|
+|16    |OBUFT     |    10|
++------+----------+------+
+
+Report Instance Areas: 
++------+-------------+----------------------------+------+
+|      |Instance     |Module                      |Cells |
++------+-------------+----------------------------+------+
+|1     |top          |                            |   555|
+|2     |  ext_uart_t |async_transmitter           |    43|
+|3     |    tickgen  |BaudTickGen__parameterized0 |    29|
++------+-------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 452 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 853.414 ; gain = 187.148
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.414 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+305 Infos, 303 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 853.414 ; gain = 555.680
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.414 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file nexys_ddr_top_utilization_synth.rpt -pb nexys_ddr_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 28 00:03:30 2020...
