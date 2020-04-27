@@ -50,6 +50,7 @@
 - [ ] clk时钟的调试
 - [ ] cash配置
 - [ ] 数据旁路重新设计
+- [ ] 上ucore
 
 ## Reference
 1. 《See_MIPS_run_linux》
