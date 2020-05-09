@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Tue Apr 28 00:02:50 2020
-# Process ID: 12628
+# Start of session at: Sun May 10 00:34:48 2020
+# Process ID: 14300
 # Current directory: D:/coding/vivado/CNotion/CNotion.runs/synth_1
 # Command line: vivado.exe -log nexys_ddr_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_ddr_top.tcl
 # Log file: D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.vds
@@ -15,14 +15,14 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13820 
+INFO: Helper process launched with PID 5640 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 390.629 ; gain = 92.895
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 391.395 ; gain = 91.238
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'nexys_ddr_top' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
 	Parameter cnt_init bound to: 16'b0000000000000001 
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:107]
 INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:108]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:109]
 INFO: [Synth 8-6157] synthesizing module 'Disp' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
 	Parameter SEG1 bound to: 3'b000 
 	Parameter SEG2 bound to: 3'b001 
@@ -32,13 +32,14 @@ INFO: [Synth 8-6157] synthesizing module 'Disp' [D:/coding/vivado/CNotion/CNotio
 	Parameter SEG6 bound to: 3'b101 
 	Parameter SEG7 bound to: 3'b110 
 	Parameter SEG8 bound to: 3'b111 
-INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:40]
-INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:122]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:43]
+INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:125]
 INFO: [Synth 8-6155] done synthesizing module 'Disp' (1#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
-INFO: [Synth 8-6157] synthesizing module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-12628-Chris/realtime/sdram_ddr_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'sdram_ddr' (2#1) [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-12628-Chris/realtime/sdram_ddr_stub.v:5]
-WARNING: [Synth 8-689] width (13) of port connection 'ddr2_addr' does not match port width (14) of module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:182]
-WARNING: [Synth 8-350] instance 'u_ddr' of module 'sdram_ddr' requires 38 connections, but only 36 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:178]
+WARNING: [Synth 8-6104] Input port 'UART_RTS' has an internal driver [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:73]
+INFO: [Synth 8-6157] synthesizing module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-14300-Chris/realtime/sdram_ddr_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sdram_ddr' (2#1) [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-14300-Chris/realtime/sdram_ddr_stub.v:5]
+WARNING: [Synth 8-689] width (13) of port connection 'ddr2_addr' does not match port width (14) of module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:181]
+WARNING: [Synth 8-350] instance 'u_ddr' of module 'sdram_ddr' requires 38 connections, but only 36 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:177]
 INFO: [Synth 8-6157] synthesizing module 'async_receiver' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:75]
 	Parameter ClkFrequency bound to: 50000000 - type: integer 
 	Parameter Baud bound to: 115200 - type: integer 
@@ -121,13 +122,12 @@ WARNING: [Synth 8-3848] Net RGB2_Blue in module/entity nexys_ddr_top does not ha
 WARNING: [Synth 8-3848] Net RGB2_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:20]
 WARNING: [Synth 8-3848] Net RGB2_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:21]
 WARNING: [Synth 8-3848] Net ext_uart_start in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:257]
-WARNING: [Synth 8-3848] Net cs_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:52]
-WARNING: [Synth 8-3848] Net sdo in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:53]
-WARNING: [Synth 8-3848] Net wp_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:54]
-WARNING: [Synth 8-3848] Net hld_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:55]
+WARNING: [Synth 8-3848] Net cs_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:51]
+WARNING: [Synth 8-3848] Net sdo in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:52]
+WARNING: [Synth 8-3848] Net wp_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:53]
+WARNING: [Synth 8-3848] Net hld_n in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:54]
 WARNING: [Synth 8-3848] Net ext_uart_tx in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:255]
-WARNING: [Synth 8-3848] Net mem_data_i in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:232]
-WARNING: [Synth 8-3848] Net ram_data_o in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:235]
+WARNING: [Synth 8-3848] Net ram_data_o in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:234]
 INFO: [Synth 8-6155] done synthesizing module 'nexys_ddr_top' (23#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
 WARNING: [Synth 8-3331] design data_ram has unconnected port addr[31]
 WARNING: [Synth 8-3331] design data_ram has unconnected port addr[30]
@@ -231,7 +231,7 @@ WARNING: [Synth 8-3331] design if_id has unconnected port stall[0]
 WARNING: [Synth 8-3331] design pc_reg has unconnected port stall[5]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 484.883 ; gain = 187.148
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 485.922 ; gain = 185.766
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -272,46 +272,14 @@ WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[3] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[2] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
 WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[1] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
 WARNING: [Synth 8-3295] tying undriven pin openmips0:ram_data_i[0] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:329]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[31] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[30] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[29] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[28] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[27] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[26] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[25] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[24] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[23] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[22] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[21] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[20] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[19] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[18] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[17] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[16] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[15] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[14] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[13] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[12] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[11] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[10] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[9] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[8] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[7] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[6] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[5] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[4] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[3] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[2] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[1] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
-WARNING: [Synth 8-3295] tying undriven pin data_ram0:data_i[0] to constant 0 [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:356]
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 484.883 ; gain = 187.148
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 485.922 ; gain = 185.766
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 484.883 ; gain = 187.148
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 485.922 ; gain = 185.766
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -326,24 +294,24 @@ Finished Parsing XDC File [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/impor
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/nexys_ddr_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_ddr_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_ddr_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.414 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.113 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 853.414 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.113 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 853.414 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 853.414 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.113 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 853.113 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -442,9 +410,11 @@ Applied set_property IO_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/c
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 95).
 Applied set_property DONT_TOUCH = true for u_ddr. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Disp'
+INFO: [Synth 8-5544] ROM "value" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sseg_an0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'RxD_state_reg' in module 'async_receiver'
 INFO: [Synth 8-5544] ROM "RxD_bit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
@@ -509,7 +479,7 @@ INFO: [Synth 8-5546] ROM "cause_o" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5546] ROM "epc_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "data_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "inst_mem" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'app_wdf_wren_reg' into 'app_wdf_end_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:127]
+INFO: [Synth 8-4471] merging register 'app_wdf_wren_reg' into 'app_wdf_end_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:126]
 INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
@@ -522,16 +492,16 @@ INFO: [Synth 8-5544] ROM "app_wdf_data" won't be mapped to Block RAM because add
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    SEG1 |                              000 |                              000
-                    SEG2 |                              001 |                              001
-                    SEG3 |                              010 |                              010
-                    SEG4 |                              011 |                              011
-                    SEG5 |                              100 |                              100
-                    SEG6 |                              101 |                              101
-                    SEG7 |                              110 |                              110
-                    SEG8 |                              111 |                              111
+                    SEG1 |                         00000001 |                              000
+                    SEG2 |                         00000010 |                              001
+                    SEG3 |                         00000100 |                              010
+                    SEG4 |                         00001000 |                              011
+                    SEG5 |                         00010000 |                              100
+                    SEG6 |                         00100000 |                              101
+                    SEG7 |                         01000000 |                              110
+                    SEG8 |                         10000000 |                              111
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'Disp'
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Disp'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -585,7 +555,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'new_pc_reg' [D:/coding/viva
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'div'
 WARNING: [Synth 8-327] inferring latch for variable 'data_o_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:155]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -613,7 +583,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 2     
 	               65 Bit    Registers := 1     
 	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 30    
+	               32 Bit    Registers := 31    
 	               27 Bit    Registers := 1     
 	               18 Bit    Registers := 2     
 	               16 Bit    Registers := 2     
@@ -639,7 +609,7 @@ Detailed RTL Component Info :
 	   8 Input     32 Bit        Muxes := 1     
 	  33 Input     32 Bit        Muxes := 1     
 	   5 Input     32 Bit        Muxes := 3     
-	   4 Input     32 Bit        Muxes := 7     
+	   4 Input     32 Bit        Muxes := 8     
 	   3 Input     32 Bit        Muxes := 4     
 	   9 Input     32 Bit        Muxes := 1     
 	  15 Input     32 Bit        Muxes := 1     
@@ -652,8 +622,9 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit        Muxes := 6     
 	  11 Input     11 Bit        Muxes := 2     
 	   2 Input     11 Bit        Muxes := 2     
-	   2 Input      8 Bit        Muxes := 17    
-	   8 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 16    
+	   7 Input      8 Bit        Muxes := 1     
+	   8 Input      8 Bit        Muxes := 1     
 	  33 Input      8 Bit        Muxes := 1     
 	   4 Input      8 Bit        Muxes := 2     
 	  28 Input      7 Bit        Muxes := 1     
@@ -665,13 +636,13 @@ Detailed RTL Component Info :
 	   2 Input      5 Bit        Muxes := 13    
 	  11 Input      5 Bit        Muxes := 1     
 	   4 Input      5 Bit        Muxes := 3     
+	   8 Input      4 Bit        Muxes := 2     
 	  11 Input      4 Bit        Muxes := 2     
 	  15 Input      4 Bit        Muxes := 2     
-	   8 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 3     
 	   3 Input      4 Bit        Muxes := 2     
 	   2 Input      4 Bit        Muxes := 7     
-	   8 Input      3 Bit        Muxes := 6     
+	   8 Input      3 Bit        Muxes := 5     
 	  28 Input      3 Bit        Muxes := 1     
 	  11 Input      3 Bit        Muxes := 1     
 	  33 Input      3 Bit        Muxes := 5     
@@ -709,6 +680,7 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit       Adders := 1     
 +---Registers : 
 	              128 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
 	               27 Bit    Registers := 1     
 	               16 Bit    Registers := 2     
 	                8 Bit    Registers := 2     
@@ -717,6 +689,7 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 4     
 +---Muxes : 
 	   2 Input    128 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
 	   3 Input     18 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 5     
 	   2 Input      8 Bit        Muxes := 2     
@@ -732,9 +705,9 @@ Detailed RTL Component Info :
 	                4 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 8     
-	   8 Input      8 Bit        Muxes := 1     
-	   8 Input      3 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 7     
+	   7 Input      8 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 1     
 Module BaudTickGen 
 Detailed RTL Component Info : 
@@ -1041,12 +1014,11 @@ INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because add
 INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "disp/sseg_an" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "app_wdf_data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "disp/sseg_ca" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "disp/dispdigit" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[7]' (FDE) to 'ext_uart_tx_reg_reg[6]'
 INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[6]' (FDE) to 'ext_uart_tx_reg_reg[5]'
 INFO: [Synth 8-3886] merging instance 'ext_uart_tx_reg_reg[5]' (FDE) to 'ext_uart_tx_reg_reg[4]'
@@ -1152,12 +1124,9 @@ INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instan
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_wdf_data_reg[126] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_cmd_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\app_addr_reg[26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\number_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp/value_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\number_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\led_bits_reg[15] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[7] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\disp/sseg_an_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\disp/value_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[4] )
@@ -1165,9 +1134,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ext_uart_t/TxD_shift_reg[0] )
-WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[2]) is unused and will be removed from module nexys_ddr_top.
-WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[1]) is unused and will be removed from module nexys_ddr_top.
-WARNING: [Synth 8-3332] Sequential element (disp/FSM_sequential_state_reg[0]) is unused and will be removed from module nexys_ddr_top.
 WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[10]) is unused and will be removed from module nexys_ddr_top.
 WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[9]) is unused and will be removed from module nexys_ddr_top.
 WARNING: [Synth 8-3332] Sequential element (ext_uart_r/FSM_onehot_RxD_state_reg[8]) is unused and will be removed from module nexys_ddr_top.
@@ -1265,9 +1231,12 @@ WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[50]) is unused and wi
 WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[49]) is unused and will be removed from module ex.
 WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[48]) is unused and will be removed from module ex.
 WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[47]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[46]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[45]) is unused and will be removed from module ex.
+WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[44]) is unused and will be removed from module ex.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1299,13 +1268,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'u_ddr/ui_clk' to pin 'u_ddr/bbstub_ui_clk/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1317,7 +1286,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1341,7 +1310,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1354,7 +1323,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1366,25 +1335,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1403,17 +1372,17 @@ Report Cell Usage:
 +------+----------+------+
 |1     |sdram_ddr |     1|
 |2     |BUFG      |     1|
-|3     |CARRY4    |    31|
-|4     |LUT1      |     6|
-|5     |LUT2      |     7|
-|6     |LUT3      |    88|
-|7     |LUT4      |     2|
+|3     |CARRY4    |    38|
+|4     |LUT1      |     7|
+|5     |LUT2      |    11|
+|6     |LUT3      |    91|
+|7     |LUT4      |    14|
 |8     |LUT5      |     6|
-|9     |LUT6      |    17|
+|9     |LUT6      |    26|
 |10    |FDCE      |    25|
 |11    |FDPE      |     1|
-|12    |FDRE      |   154|
-|13    |FDSE      |     6|
+|12    |FDRE      |   193|
+|13    |FDSE      |    14|
 |14    |IBUF      |     2|
 |15    |OBUF      |    34|
 |16    |OBUFT     |    10|
@@ -1423,32 +1392,33 @@ Report Instance Areas:
 +------+-------------+----------------------------+------+
 |      |Instance     |Module                      |Cells |
 +------+-------------+----------------------------+------+
-|1     |top          |                            |   555|
-|2     |  ext_uart_t |async_transmitter           |    43|
-|3     |    tickgen  |BaudTickGen__parameterized0 |    29|
+|1     |top          |                            |   638|
+|2     |  disp       |Disp                        |    83|
+|3     |  ext_uart_t |async_transmitter           |    43|
+|4     |    tickgen  |BaudTickGen__parameterized0 |    29|
 +------+-------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.113 ; gain = 552.957
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 452 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 853.414 ; gain = 187.148
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.414 ; gain = 555.680
+Synthesis finished with 0 errors, 0 critical warnings and 449 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 853.113 ; gain = 185.766
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 853.113 ; gain = 552.957
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 31 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.414 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.113 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-305 Infos, 303 Warnings, 0 Critical Warnings and 0 Errors encountered.
+303 Infos, 271 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 853.414 ; gain = 555.680
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.414 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 853.113 ; gain = 552.957
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.113 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file nexys_ddr_top_utilization_synth.rpt -pb nexys_ddr_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 28 00:03:30 2020...
+INFO: [Common 17-206] Exiting Vivado at Sun May 10 00:35:31 2020...

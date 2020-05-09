@@ -1,15 +1,18 @@
 module Disp(clk, sseg_ca, sseg_an, number);
-input clk; // æ—¶é’Ÿæ˜¾ç¤º
-input [7:0] number; //æ˜¾ç¤ºçš„æ•°å­?
+input clk; 
+input [7:0] number; 
 
-output reg[7:0] sseg_an; // ä½Žä½æ•°ç ç®?
-output reg [7:0] sseg_ca; // é«˜ä½æ•°ç ç®?;
+output reg[7:0] sseg_an; // ÏÔÊ¾µÄ¾§Ìå¹Ü
+output wire  [7:0] sseg_ca; // ÏÔÊ¾µÄÊýÂë¹ÜÎ»ÖÃ
 
 reg [3:0] value = 4'b0000;
-
-// åˆ†é¢‘åˆ?1ms
+reg [7:0] dispdigit = 8'b01110001;
 reg clk_sys;
 reg [25:0] div_counter;
+
+assign sseg_ca = dispdigit;
+
+
 always @(posedge clk) begin    // æ—¶é’Ÿä¸Šå‡æ²?
     if(div_counter >= 25000) begin  //1ms
 		clk_sys <= ~clk_sys;    
@@ -32,24 +35,24 @@ parameter[2:0] SEG1 = 3'b000,
                     SEG7 = 3'b110,
                     SEG8 = 3'b111;
 
-assign sel = number[7:0]; //æ˜¾ç¤º8ä¸ªå­—ç¬?
+assign sel = number[7:0]; //Ò»µ½ÆßÎªÏÔÊ¾Î»ÖÃ
 
 reg [2:0] state = 3'b000;
 
 always @(posedge clk_sys ) begin
         case(state)
                 SEG1: begin
-                    if(sel[7]) begin//ç¬?1ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
-                        sseg_an[7:0] <= 8'b01111111;
+                    if(sel[7]) begin // µÚÒ»Î»¾§Ìå¹Ü
+                        value <= 4'b0000;
+                        sseg_an[7:0] <= 8'b11111111;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
                     end
                     state <= SEG2;
                 end
                 SEG2: begin
-                    if(sel[6] ) begin//ç¬?2ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[6] ) begin // µÚ¶þÎ»¾§Ìå¹Ü
+                        value <= 4'b1100;
                         sseg_an[7:0] <= 8'b10111111;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -57,8 +60,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG3;
                 end
                 SEG3: begin
-                    if(sel[5] ) begin//ç¬?3ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[5] ) begin
+                          value <= 4'b0000;
                         sseg_an[7:0] <= 8'b11011111;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -66,8 +69,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG4;
                 end
                 SEG4: begin
-                    if(sel[4] ) begin//ç¬?4ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[4] ) begin
+                         value <= 4'b0011;
                         sseg_an[7:0] <= 8'b11101111;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -75,8 +78,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG5;
                 end
                 SEG5: begin
-                    if(sel[3] ) begin//ç¬?5ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[3] ) begin
+                        value <= 4'b0011;
                         sseg_an[7:0] <= 8'b11110111;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -84,8 +87,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG6;
                 end
                 SEG6: begin
-                    if(sel[2] ) begin//ç¬?6ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[2] ) begin
+                        value <= 4'b0101;
                         sseg_an[7:0] <= 8'b11111011;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -93,8 +96,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG7;
                 end
                 SEG7: begin
-                    if(sel[1]) begin//ç¬?7ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[1]) begin
+                        value <= 4'b0111;
                         sseg_an[7:0] <= 8'b11111101;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -102,8 +105,8 @@ always @(posedge clk_sys ) begin
                     state <= SEG8;
                 end
                 SEG8: begin
-                    if(sel[0] ) begin//ç¬?8ä¸ªæ•°ç ç®¡é€‰é??
-                        value <= 4'b0001;
+                    if(sel[0] ) begin
+                        value <= 4'b1010;
                         sseg_an[7:0] <= 8'b11111110;
                     end else begin
                         sseg_an[7:0] <= 8'b11111111;
@@ -117,26 +120,26 @@ always @(posedge clk_sys ) begin
 end
 
 
-// æ˜¾ç¤ºçš„æ•°å­—é›†å?
+// ÏÔÊ¾µÄ¾§Ìå¹ÜÎ»Êý
 always @(*) begin
 	case(value)
-		4'h0 : sseg_ca[7:0] <= 8'b00000011;  // 0    0x03
-		4'h1 : sseg_ca[7:0] <= 8'b10011111;  // 1    0x9F
-		4'h2 : sseg_ca[7:0] <= 8'b00100101;  // 2    0x25
-		4'h3 : sseg_ca[7:0] <= 8'b00001101;  // 3    0x0D
-		4'h4 : sseg_ca[7:0] <= 8'b10011001;  // 4    0x99
-		4'h5 : sseg_ca[7:0] <= 8'b01001001;  // 5    0x49
-		4'h6 : sseg_ca[7:0] <= 8'b01000001;  // 6    0x41
-		4'h7 : sseg_ca[7:0] <= 8'b00011111;  // 7    0x1F
-		4'h8 : sseg_ca[7:0] <= 8'b00000001;  // 8    0x01
-		4'h9 : sseg_ca[7:0] <= 8'b00001001;  // 9    0x9
-		4'hA : sseg_ca[7:0] <= 8'b00010001;  // A   0x8
-		4'hB : sseg_ca[7:0] <= 8'b11000001;	 // B   0xC0
-		4'hC : sseg_ca[7:0] <= 8'b01100011;	 // C
-		4'hD : sseg_ca[7:0] <= 8'b10000101;	 // D
-		4'hE : sseg_ca[7:0] <= 8'b01100001;	 // E
-		4'hF : sseg_ca[7:0] <= 8'b01110001;	 // F
-		default : sseg_ca[7:0] <= 8'b11111110;
+		4'h0 : dispdigit[7:0] <= 8'b10010001;  //H  //8'b00000011;  // 0    0x03 
+		4'h1 : dispdigit[7:0] <= 8'b10011111;  // 1    0x9F
+		4'h2 : dispdigit[7:0] <= 8'b00100101;  // 2    0x25
+		4'h3 : dispdigit[7:0] <= 8'b00001101;  // 3    0x0D
+		4'h4 : dispdigit[7:0] <= 8'b10011001;  // 4    0x99
+		4'h5 : dispdigit[7:0] <= 8'b01001001;  // 5    0x49
+		4'h6 : dispdigit[7:0] <= 8'b01000001;  // 6    0x41
+		4'h7 : dispdigit[7:0] <= 8'b00011111;  // 7    0x1F
+		4'h8 : dispdigit[7:0] <= 8'b00000001;  // 8    0x01
+		4'h9 : dispdigit[7:0] <= 8'b00011001;  // 9    0x9
+		4'hA : dispdigit[7:0] <= 8'b00010001;  // A   0x8
+		4'hB : dispdigit[7:0] <= 8'b11000001;	 // B   0xC0
+		4'hC : dispdigit[7:0] <= 8'b01100011;	 // C
+		4'hD : dispdigit[7:0] <= 8'b10000101;	 // D
+		4'hE : dispdigit[7:0] <= 8'b01100001;	 // E
+		4'hF : dispdigit[7:0] <= 8'b01110001;	 // F
+		default : dispdigit[7:0] <= 8'b11111110;
 	endcase
 end
 
