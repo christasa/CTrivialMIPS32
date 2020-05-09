@@ -2,51 +2,51 @@
 `include "defines.v"
 
 module nexys_ddr_top(
-    input wire clk_50M,   // 50MHZ æ—¶é’Ÿè¾“å…¥
+	input wire clk_50M,   // 50MHZ Ê±ÖÓÊäÈë
 
-    input wire CPU_RESETN,         // BTN6æ‰‹åŠ¨å¤ä½æŒ‰é’®å¼€å…³ï¼Œå¸¦æ¶ˆæŠ–ç”µè·¯ï¼ŒæŒ‰ä¸‹æ—¶ä¸º1
+    input wire CPU_RESETN,         // BTN6ÊÖ¶¯¸´Î»°´Å¥¿ª¹Ø£¬´øÏû¶¶µçÂ·£¬°´ÏÂÊ±Îª1
 
-    input wire[4:0] BTN,      // BTN1~BTN5ï¼ŒæŒ‰é’®å¼€å…³ï¼ŒæŒ‰ä¸‹æ—¶ä¸º1
-    input wire[15:0] SW,     // 16ä½æ‹¨ç å¼€å…³ï¼Œæ‹¨åˆ°"ON"æ—¶ä¸º1
-    output wire[15:0] LED,   // 16ä½LED,è¾“å‡º1æ—¶ç‚¹äº®
+    input wire[4:0] BTN,      // BTN1~BTN5£¬°´Å¥¿ª¹Ø£¬°´ÏÂÊ±Îª1
+    input wire[15:0] SW,     // 16Î»²¦Âë¿ª¹Ø£¬²¦µ½"ON"Ê±Îª1
+    output wire[15:0] LED,   // 16Î»LED,Êä³ö1Ê±µãÁÁ
 
-    output wire[7:0] SSEG_CA, // æ•°ç ç®¡ä½ä½ä¿¡å·,è¾“å‡º1ç‚¹äº®
-    output wire [7:0] SSEG_AN, // æ•°ç ç®¡é«˜ä½ä¿¡å·,è¾“å‡º0ç‚¹äº®
+    output wire[7:0] SSEG_CA, // ÊıÂë¹ÜµÍÎ»ĞÅºÅ,Êä³ö1µãÁÁ
+    output wire [7:0] SSEG_AN, // ÊıÂë¹Ü¸ßÎ»ĞÅºÅ,Êä³ö0µãÁÁ
 
-    output wire RGB1_Blue,   // ç¯æ³¡1è“è‰²RGB
-    output wire RGB1_Green, // ç¯æ³¡1ç»¿è‰²RGB
-    output wire RGB1_Red,   // ç¯æ³¡1çº¢è‰²RGB
-    output wire RGB2_Blue,  // ç¯æ³¡2è“è‰²RGB
-    output wire RGB2_Green, // ç¯æ³¡2ç»¿è‰²RGB
-    output wire RGB2_Red,   // ç¯æ³¡2çº¢è‰²RGB
-
-
-
-    //RAMä¿¡å·
-    inout wire [15:0]   ddr2_dq,
-    inout wire [1:0]        ddr2_dqs_n,
-    inout wire [1:0]        ddr2_dqs_p,
-    output wire [12:0]  ddr2_addr,
-    output wire [2:0]   ddr2_ba,
-    output wire     ddr2_ras_n,
-    output wire     ddr2_cas_n,
-    output wire     ddr2_we_n,
-    output wire [0:0]   ddr2_ck_p,
-    output wire [0:0]   ddr2_ck_n,
-    output wire [0:0]   ddr2_cke,
-    output wire [0:0]   ddr2_cs_n,
-    output wire [1:0]   ddr2_dm,
-    output wire [0:0]   ddr2_odt,
-
-    // ç›´è¿ä¸²å£ä¿¡å·
-    output wire UART_TXD_IN,   // ç›´è¿ä¸²å£å†™å…¥æ•°æ®
-    input wire UART_TXD, // ç›´è¿ä¸²å£æ¥æ”¶æ•°æ®
-    output wire UART_CTS, // ä¸²å£å‘é€æ•°æ®ä¿¡å·ï¼Œ0æ˜¯æœ‰æ•ˆï¼Œ1æ˜¯æ— æ•ˆ
-    input wire UART_RTS, // ä¸²å£æ¥å—æ•°æ®ä¿¡å·
+    output wire RGB1_Blue,   // µÆÅİ1À¶É«RGB
+    output wire RGB1_Green, // µÆÅİ1ÂÌÉ«RGB
+    output wire RGB1_Red,   // µÆÅİ1ºìÉ«RGB
+    output wire RGB2_Blue,  // µÆÅİ2À¶É«RGB
+    output wire RGB2_Green, // µÆÅİ2ÂÌÉ«RGB
+    output wire RGB2_Red,   // µÆÅİ2ºìÉ«RGB
 
 
 
-    // SPI Flashå­˜å‚¨ä¿¡å·
+    //RAMĞÅºÅ
+	inout wire [15:0]	ddr2_dq,
+	inout wire [1:0]		ddr2_dqs_n,
+	inout wire [1:0]		ddr2_dqs_p,
+	output wire [12:0]	ddr2_addr,
+	output wire [2:0]	ddr2_ba,
+	output wire 	ddr2_ras_n,
+	output wire 	ddr2_cas_n,
+	output wire 	ddr2_we_n,
+	output wire [0:0]	ddr2_ck_p,
+	output wire [0:0]	ddr2_ck_n,
+	output wire [0:0]	ddr2_cke,
+	output wire [0:0]	ddr2_cs_n,
+	output wire [1:0]	ddr2_dm,
+	output wire [0:0]	ddr2_odt,
+
+    // Ö±Á¬´®¿ÚĞÅºÅ
+    output wire UART_TXD_IN,   // Ö±Á¬´®¿ÚĞ´ÈëÊı¾İ
+    input wire UART_TXD, // Ö±Á¬´®¿Ú½ÓÊÕÊı¾İ
+    output wire UART_CTS, // ´®¿Ú·¢ËÍÊı¾İĞÅºÅ£¬0ÊÇÓĞĞ§£¬1ÊÇÎŞĞ§
+    input wire UART_RTS, // ´®¿Ú½ÓÊÜÊı¾İĞÅºÅ
+
+
+
+    // SPI Flash´æ´¢ĞÅºÅ
     input  wire    sdi,
     output reg  cs_n,
     output reg  sdo,
@@ -56,7 +56,7 @@ module nexys_ddr_top(
 );
 
 
-// æ•°ç ç®¡è¿æ¥å…³ç³»ç¤ºæ„å›¾ï¼Œdpy1åŒç†
+// ÊıÂë¹ÜÁ¬½Ó¹ØÏµÊ¾ÒâÍ¼£¬dpy1Í¬Àí
 // p=SSEG_CA[0] // ---a---
 // c=SSEG_CA[1] // |     |
 // d=SSEG_CA[2] // f     b
@@ -68,37 +68,37 @@ module nexys_ddr_top(
 //              // ---d---  p
 
 reg[7:0] number;
-Disp disp(.clk(clk_50M), .sseg_ca(SSEG_CA), .sseg_an(SSEG_AN), .number(number)); // æ˜¾ç¤ºæ•°ç ç®¡
+Disp disp(.clk(clk_50M), .sseg_ca(SSEG_CA), .sseg_an(SSEG_AN), .number(number)); // ÏÔÊ¾ÊıÂë¹Ü
 
 assign UART_RTS = 1'b0;
 
-reg app_en; // æŒ‡ä»¤ä½¿èƒ½ï¼Œå½“app_addrå’Œapp_cmdéƒ½å‡†å¤‡å¥½åï¼Œå°†å…¶æ‹‰é«˜æ¥é€å‡ºæŒ‡ä»¤
-reg app_wdf_end; // å†™æ•°æ®æœ«ç«¯ä¿¡å·ï¼Œå½“è¾“å…¥çš„æ•°æ®æ˜¯æœ€åä¸€ä¸ªæ—¶ï¼Œå°†æ­¤ä¿¡å·æ‹‰é«˜ï¼Œè¡¨ç¤ºæ•°æ®å·²é€å®Œ
-reg [2:0] app_cmd; // ç”¨æˆ·æŒ‡ä»¤ï¼Œ3'b001ä¸ºè¯»ï¼Œ3'b000ä¸ºå†™
-reg [26:0] app_addr;  // æ•°æ®åœ°å€ï¼Œä»é«˜ä½åˆ°ä½ä½åˆ†åˆ«æ˜¯ bank 4ä½ï¼Œè¡Œåœ°å€13ä½å’Œåˆ—åœ°å€10ä½
-reg [127:0] app_wdf_data; // å†™æ•°æ®ï¼Œä»–ä¼šå…ˆç»è¿‡app_wdf_maskï¼Œå°†æŒ‡å®šéƒ¨åˆ†è¦†ç›–ä¸ºå…¨1åé€å‡º
-reg app_wdf_wren; // å†™ä½¿èƒ½ï¼Œå½“æ•°æ®å‡†å¤‡å¥½æ—¶ï¼Œå°†æ­¤ä¿¡å·æ‹‰é«˜
-wire [127:0] app_rd_data;  // è¯»æ•°æ®
-wire [15:0] app_wdf_mask;  // å†™æ•°æ®maskï¼Œ16ä½çš„maskï¼Œæ¯ä¸€ä½å¯¹åº”æ•°æ®ä¸­çš„8ä½ï¼Œå½“maskçš„[0]ä¸ºé«˜æ—¶ï¼Œapp_wdf_data[7:0]é€å…¥DDRæ—¶ä¼šå˜æˆå…¨1ï¼›å½“maskçš„[15]ä¸ºé«˜æ—¶ï¼Œapp_wdf_data[127:120]é€å…¥DDRæ—¶ä¼šå˜æˆå…¨1
-wire app_rdy; // æŒ‡ä»¤æ¥æ”¶ä¿¡å·ï¼Œæ­¤ä¿¡å·å‡é«˜è¡¨ç¤ºé€å…¥çš„æŒ‡ä»¤å·²ç»è¢«æ¥å—ã€‚å¦‚æœè¿Ÿè¿Ÿä¸å‡é«˜ï¼Œæœ‰å¯èƒ½DDRåœ¨åˆå§‹åŒ–ï¼Œæˆ–è€…FIFOå·²æ»¡æ— æ³•åœ¨è¯»å†™ï¼Œæˆ–è€…æ­£åœ¨å¤„ç†å…¶ä»–çš„è¯»æ“ä½œ
-wire app_rd_data_end; // è¯»æ•°æ®æœ«ç«¯ä¿¡å·ï¼Œæœ€åä¸€ä¸ªè¯»å‡ºçš„ä¿¡å·
-wire app_rd_data_valid; // è¯»æ•°æ®å‡†å¤‡ï¼Œæ­¤ä¿¡å·å‡é«˜è¡¨ç¤ºè¯»æ•°æ®å‡†å¤‡ï¼Œå¯ä»¥æ¥å—æ•°æ®
-wire app_wdf_rdy; // å†™æ•°æ®å‡†å¤‡ï¼Œæ­¤ä¿¡å·å‡é«˜è¡¨ç¤ºFIFOå·²ç»å‡†å¤‡å¥½æ¥æ”¶æ–°æ•°æ®
-wire app_sr_active; // ä¿ç•™è¾“å‡ºå¼•è„šï¼Œæ— è§†
-wire app_ref_ack; // è¯¥ä¿¡å·å‡é«˜è¡¨ç¤ºrefreshåˆ·æ–°æŒ‡ä»¤è¢«ç¡®è®¤
-wire app_zq_ack; // è¯¥ä¿¡å·å‡é«˜è¡¨ç¤ºZQæ ¡å‡†æŒ‡ä»¤è¢«ç¡®è®¤
+reg app_en; // Ö¸ÁîÊ¹ÄÜ£¬µ±app_addrºÍapp_cmd¶¼×¼±¸ºÃºó£¬½«ÆäÀ­¸ßÀ´ËÍ³öÖ¸Áî
+reg app_wdf_end; // Ğ´Êı¾İÄ©¶ËĞÅºÅ£¬µ±ÊäÈëµÄÊı¾İÊÇ×îºóÒ»¸öÊ±£¬½«´ËĞÅºÅÀ­¸ß£¬±íÊ¾Êı¾İÒÑËÍÍê
+reg [2:0] app_cmd; // ÓÃ»§Ö¸Áî£¬3'b001Îª¶Á£¬3'b000ÎªĞ´
+reg [26:0] app_addr;  // Êı¾İµØÖ·£¬´Ó¸ßÎ»µ½µÍÎ»·Ö±ğÊÇ bank 4Î»£¬ĞĞµØÖ·13Î»ºÍÁĞµØÖ·10Î»
+reg [127:0] app_wdf_data; // Ğ´Êı¾İ£¬Ëû»áÏÈ¾­¹ıapp_wdf_mask£¬½«Ö¸¶¨²¿·Ö¸²¸ÇÎªÈ«1ºóËÍ³ö
+reg app_wdf_wren; // Ğ´Ê¹ÄÜ£¬µ±Êı¾İ×¼±¸ºÃÊ±£¬½«´ËĞÅºÅÀ­¸ß
+wire [127:0] app_rd_data;  // ¶ÁÊı¾İ
+wire [15:0] app_wdf_mask;  // Ğ´Êı¾İmask£¬16Î»µÄmask£¬Ã¿Ò»Î»¶ÔÓ¦Êı¾İÖĞµÄ8Î»£¬µ±maskµÄ[0]Îª¸ßÊ±£¬app_wdf_data[7:0]ËÍÈëDDRÊ±»á±ä³ÉÈ«1£»µ±maskµÄ[15]Îª¸ßÊ±£¬app_wdf_data[127:120]ËÍÈëDDRÊ±»á±ä³ÉÈ«1
+wire app_rdy; // Ö¸Áî½ÓÊÕĞÅºÅ£¬´ËĞÅºÅÉı¸ß±íÊ¾ËÍÈëµÄÖ¸ÁîÒÑ¾­±»½ÓÊÜ¡£Èç¹û³Ù³Ù²»Éı¸ß£¬ÓĞ¿ÉÄÜDDRÔÚ³õÊ¼»¯£¬»òÕßFIFOÒÑÂúÎŞ·¨ÔÚ¶ÁĞ´£¬»òÕßÕıÔÚ´¦ÀíÆäËûµÄ¶Á²Ù×÷
+wire app_rd_data_end; // ¶ÁÊı¾İÄ©¶ËĞÅºÅ£¬×îºóÒ»¸ö¶Á³öµÄĞÅºÅ
+wire app_rd_data_valid; // ¶ÁÊı¾İ×¼±¸£¬´ËĞÅºÅÉı¸ß±íÊ¾¶ÁÊı¾İ×¼±¸£¬¿ÉÒÔ½ÓÊÜÊı¾İ
+wire app_wdf_rdy; // Ğ´Êı¾İ×¼±¸£¬´ËĞÅºÅÉı¸ß±íÊ¾FIFOÒÑ¾­×¼±¸ºÃ½ÓÊÕĞÂÊı¾İ
+wire app_sr_active; // ±£ÁôÊä³öÒı½Å£¬ÎŞÊÓ
+wire app_ref_ack; // ¸ÃĞÅºÅÉı¸ß±íÊ¾refreshË¢ĞÂÖ¸Áî±»È·ÈÏ
+wire app_zq_ack; // ¸ÃĞÅºÅÉı¸ß±íÊ¾ZQĞ£×¼Ö¸Áî±»È·ÈÏ
 wire init_calib_complete;
 wire app_write_en;
 
 
 
-// åˆå§‹åŒ–LEDç¯çš„æ˜¾ç¤º
+// ³õÊ¼»¯LEDµÆµÄÏÔÊ¾
 reg[15:0] led_bits = 16'b0000_0000_0000_0000;
 assign LED = led_bits;
 
 
 reg [15:0] counter = 16'h0;
-parameter cnt_init = 16'h1; // minimum: 1
+parameter cnt_init = 16'h1;	// minimum: 1
 reg [26:0] addr0 = 27'h000_0008;
 reg [26:0] addr1 = 27'h003_0100;
 reg [127:0] data0 = 128'h1111_2222_3333_4444_5555_6666_7777_8888;
@@ -111,7 +111,7 @@ always@ (posedge app_rd_data_valid) begin
     read_valid[0] = (app_rd_data == data0);
     read_valid[1] = (app_rd_data == data1);
 end
-    
+	
 
 
 always@ (posedge clk_50M or negedge CPU_RESETN) begin
@@ -133,7 +133,7 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
                 app_wdf_wren = 1'b1;
                 app_wdf_end = 1'b1;
                 app_en = 1'b1;
-            end else        // Hold specific signals until app_wdf_rdy is asserted.
+            end else		// Hold specific signals until app_wdf_rdy is asserted.
                 counter = counter - 16'h1;
         else if (counter == cnt_init + 1 && ~stop_w[0])
             if (app_rdy & app_wdf_rdy) begin
@@ -142,7 +142,7 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
                 app_en = 1'b0;
                 app_cmd = 3'b1;
                 stop_w[0] = 1'b1;
-            end else        // Hold specific signals until app_wdf_rdy is asserted.
+            end else		// Hold specific signals until app_wdf_rdy is asserted.
                 counter = counter - 16'h1;
         else if (counter == cnt_init + 8 && ~stop_w[1])
             if (app_rdy & app_wdf_rdy) begin
@@ -152,7 +152,7 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
                 app_wdf_wren = 1'b1;
                 app_wdf_end = 1'b1;
                 app_en = 1'b1;
-            end else        // Hold specific signals until app_wdf_rdy is asserted.
+            end else		// Hold specific signals until app_wdf_rdy is asserted.
                 counter = counter - 16'h1;
         else if (counter == cnt_init + 9 && ~stop_w[1])
             if (app_rdy & app_wdf_rdy) begin
@@ -161,7 +161,7 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
                 app_en = 1'b0;
                 app_cmd = 3'b1;
                 stop_w[1] = 1'b1;
-            end else        // Hold specific signals until app_wdf_rdy is asserted.
+            end else		// Hold specific signals until app_wdf_rdy is asserted.
                 counter = counter - 16'h1;
         else if (counter == cnt_init + 88) begin
             app_addr = addr0;
@@ -176,54 +176,54 @@ end
 
 sdram_ddr u_ddr (
 
-        // å†…å­˜æ¥å£ç«¯
-        .ddr2_cs_n                  (ddr2_cs_n),
-        .ddr2_addr                  (ddr2_addr),
-        .ddr2_ba                    (ddr2_ba),
-        .ddr2_we_n                  (ddr2_we_n),
-        .ddr2_ras_n                 (ddr2_ras_n),
-        .ddr2_cas_n                 (ddr2_cas_n),
-        .ddr2_ck_n                  (ddr2_ck_n),
-        .ddr2_ck_p                  (ddr2_ck_p),
-        .ddr2_cke                   (ddr2_cke),
-        .ddr2_dq                    (ddr2_dq),
-        .ddr2_dqs_n                 (ddr2_dqs_n),
-        .ddr2_dqs_p                 (ddr2_dqs_p),
-        .ddr2_dm                    (ddr2_dm),
-        .ddr2_odt                   (ddr2_odt),
+		// ÄÚ´æ½Ó¿Ú¶Ë
+		.ddr2_cs_n					(ddr2_cs_n),
+		.ddr2_addr					(ddr2_addr),
+		.ddr2_ba					(ddr2_ba),
+		.ddr2_we_n					(ddr2_we_n),
+		.ddr2_ras_n					(ddr2_ras_n),
+		.ddr2_cas_n					(ddr2_cas_n),
+		.ddr2_ck_n					(ddr2_ck_n),
+		.ddr2_ck_p					(ddr2_ck_p),
+		.ddr2_cke					(ddr2_cke),
+		.ddr2_dq					(ddr2_dq),
+		.ddr2_dqs_n					(ddr2_dqs_n),
+		.ddr2_dqs_p					(ddr2_dqs_p),
+		.ddr2_dm					(ddr2_dm),
+		.ddr2_odt					(ddr2_odt),
 
-        // æ•°æ®æ¥å£ç«¯
-        .app_addr                   (app_addr),
-        .app_cmd                    (app_cmd),
-        .app_en                     (app_en),
-        .app_wdf_rdy                (app_wdf_rdy),
-        .app_wdf_data               (app_wdf_data),
-        .app_wdf_end                (app_wdf_end),
-        .app_wdf_wren               (app_wdf_wren),
-        .app_rd_data                (app_rd_data),
-        .app_rd_data_end            (app_rd_data_end),
-        .app_rd_data_valid          (app_rd_data_valid),
-        .app_rdy                    (app_rdy),
-        .app_sr_req                 (1'b0),
-        .app_ref_req                (1'b0),
-        .app_zq_req                 (1'b0),
-        .app_sr_active              (app_sr_active),
-        .app_ref_ack                (app_ref_ack),
-        .app_zq_ack                 (app_zq_ack),
-        .app_wdf_mask               (16'h0000),
-        .init_calib_complete        (init_calib_complete),
+		// Êı¾İ½Ó¿Ú¶Ë
+		.app_addr					(app_addr),
+		.app_cmd					(app_cmd),
+		.app_en						(app_en),
+		.app_wdf_rdy				(app_wdf_rdy),
+		.app_wdf_data				(app_wdf_data),
+		.app_wdf_end				(app_wdf_end),
+		.app_wdf_wren				(app_wdf_wren),
+		.app_rd_data				(app_rd_data),
+		.app_rd_data_end			(app_rd_data_end),
+		.app_rd_data_valid			(app_rd_data_valid),
+		.app_rdy					(app_rdy),
+		.app_sr_req					(1'b0),
+		.app_ref_req				(1'b0),
+		.app_zq_req					(1'b0),
+		.app_sr_active				(app_sr_active),
+		.app_ref_ack				(app_ref_ack),
+		.app_zq_ack					(app_zq_ack),
+		.app_wdf_mask				(16'h0000),
+		.init_calib_complete		(init_calib_complete),
 
-        // ç³»ç»Ÿæ—¶é’Ÿ
-        .sys_clk_i                  (clk_50M),
+		// ÏµÍ³Ê±ÖÓ
+		.sys_clk_i					(clk_50M),
 
-        // Reference Clock Ports
-        .clk_ref_i                  (clk_50M),
-        .sys_rst                    (CPU_RESETN)
-    );
+		// Reference Clock Ports
+		.clk_ref_i					(clk_50M),
+		.sys_rst					(CPU_RESETN)
+	);
 
 
 
-//reg [`RegBus] digit_data;
+reg [`RegBus] digit_data;
 //reg [`RegBus] write_data;
 
 //wire[`RegBus] mem_data_i = app_rd_data[`RegBus];
@@ -233,22 +233,23 @@ wire[`RegBus] mem_data_o;
 wire[`RegBus] ram_data_i;
 wire[`RegBus] ram_data_o;
 
+
 //assign app_wdf_data[`RegBus] = write_data;
-//always@ (posedge clk_50M) begin
-//      if (SW[3]) begin
-//          digit_data <= app_addr;
-//      end
-//      case (SW[1:0])
-//          2'b00 : digit_data <= app_rd_data[31:0];
-//          2'b01 : digit_data <= app_rd_data[63:32];
-//          2'b10 : digit_data <= app_rd_data[95:64];
-//          2'b11 : digit_data <= app_rd_data[127:96];
-//      endcase
-        
-//end
+always@ (posedge clk_50M) begin
+		if (SW[3]) begin
+			digit_data <= app_addr;
+		end
+		case (SW[1:0])
+			2'b00 : digit_data <= app_rd_data[31:0];
+			2'b01 : digit_data <= app_rd_data[63:32];
+			2'b10 : digit_data <= app_rd_data[95:64];
+			2'b11 : digit_data <= app_rd_data[127:96];
+		endcase
+		
+end
 
 
-//ç›´è¿ä¸²å£æ¥æ”¶å‘é€æ¼”ç¤ºï¼Œä»ç›´è¿ä¸²å£æ”¶åˆ°çš„æ•°æ®å†å‘é€å‡ºå»
+//Ö±Á¬´®¿Ú½ÓÊÕ·¢ËÍÑİÊ¾£¬´ÓÖ±Á¬´®¿ÚÊÕµ½µÄÊı¾İÔÙ·¢ËÍ³öÈ¥
 wire [7:0] ext_uart_rx;
 reg [7:0] ext_uart_rx_reg;
 reg [7:0] ext_uart_tx_reg, ext_uart_tx;
@@ -259,9 +260,9 @@ reg [1:0] counters;
 assign  UART_CTS = ext_uart_start_reg;
 
 always @(posedge clk_50M) begin
-    if (CPU_RESETN) begin
-        number <= 8'b0; 
-        led_bits <= 16'h1; // é‡ç½®LED
+    if (~CPU_RESETN) begin
+        number <= 8'b1111_1111; 
+        led_bits <= 16'hA; // ÖØÖÃLED
         ext_uart_tx_reg <= 8'b0;
         ext_uart_start_reg <= 1'b0;
         counters <= 2'b0;
@@ -280,22 +281,22 @@ always @(posedge clk_50M) begin
     end
 end
 
-async_receiver #(.ClkFrequency(50000000),.Baud(115200)) //æ¥æ”¶æ¨¡å—ï¼Œ115200æ— æ£€éªŒä½
+async_receiver #(.ClkFrequency(50000000),.Baud(115200)) //½ÓÊÕÄ£¿é£¬115200ÎŞ¼ìÑéÎ»
     ext_uart_r(
-        .clk(clk_50M),                       //å¤–éƒ¨æ—¶é’Ÿä¿¡å·
-        .RxD(UART_TXD),                   //å¤–éƒ¨ä¸²è¡Œä¿¡å·è¾“å…¥
-        .RxD_data_ready(ext_uart_ready),     //æ•°æ®æ¥æ”¶åˆ°æ ‡å¿—
-        .RxD_clear(ext_uart_ready),          //æ¸…é™¤æ¥æ”¶æ ‡å¿—
-        .RxD_data(ext_uart_rx)               //æ¥æ”¶åˆ°çš„ä¸€å­—èŠ‚æ•°æ®
+        .clk(clk_50M),                       //Íâ²¿Ê±ÖÓĞÅºÅ
+        .RxD(UART_TXD),                   //Íâ²¿´®ĞĞĞÅºÅÊäÈë
+        .RxD_data_ready(ext_uart_ready), 	 //Êı¾İ½ÓÊÕµ½±êÖ¾
+        .RxD_clear(ext_uart_ready),       	 //Çå³ı½ÓÊÕ±êÖ¾
+        .RxD_data(ext_uart_rx)             	 //½ÓÊÕµ½µÄÒ»×Ö½ÚÊı¾İ
     );
     
-async_transmitter #(.ClkFrequency(50000000),.Baud(115200)) //å‘é€æ¨¡å—ï¼Œ115200æ— æ£€éªŒä½
+async_transmitter #(.ClkFrequency(50000000),.Baud(115200)) //·¢ËÍÄ£¿é£¬115200ÎŞ¼ìÑéÎ»
     ext_uart_t(
-        .clk(clk_50M),                       //å¤–éƒ¨æ—¶é’Ÿä¿¡å·
-        .TxD(UART_TXD_IN),                      //ä¸²è¡Œä¿¡å·è¾“å‡º
-        .TxD_busy(ext_uart_busy),            //å‘é€å™¨å¿™çŠ¶æ€æŒ‡ç¤º
-        .TxD_start(ext_uart_start_reg),      //å¼€å§‹å‘é€ä¿¡å·
-        .TxD_data(ext_uart_tx_reg)           //å¾…å‘é€çš„æ•°æ®
+        .clk(clk_50M),                       //Íâ²¿Ê±ÖÓĞÅºÅ
+        .TxD(UART_TXD_IN),                      //´®ĞĞĞÅºÅÊä³ö
+        .TxD_busy(ext_uart_busy),            //·¢ËÍÆ÷Ã¦×´Ì¬Ö¸Ê¾
+        .TxD_start(ext_uart_start_reg),      //¿ªÊ¼·¢ËÍĞÅºÅ
+        .TxD_data(ext_uart_tx_reg)           //´ı·¢ËÍµÄÊı¾İ
     );
 
 
@@ -306,7 +307,7 @@ reg serial_read_status = 1'b0;
 reg already_read_status = 1'b0;
 reg[7:0] serial_read_data;
 always @(posedge ext_uart_ready) begin   
-    if (CPU_RESETN) begin 
+    if (~CPU_RESETN) begin 
         serial_read_status <= 1'b0;
     end else begin
         serial_read_status <= ~serial_read_status;
@@ -315,7 +316,7 @@ always @(posedge ext_uart_ready) begin
 end
 
 
-//è¿æ¥æŒ‡ä»¤å­˜å‚¨å™¨
+//Á¬½ÓÖ¸Áî´æ´¢Æ÷
 
   wire[`InstAddrBus] inst_addr;
   wire[`InstBus] inst;
@@ -326,41 +327,41 @@ end
   wire mem_ce_i;   
 
  openmips openmips0(
-        .clk(clk_50M),
-        .rst(CPU_RESETN),
-    
-        .rom_addr_o(inst_addr),
-        .rom_data_i(inst),
-        .rom_ce_o(rom_ce),
+		.clk(clk_50M),
+		.rst(CPU_RESETN),
+	
+		.rom_addr_o(inst_addr),
+		.rom_data_i(inst),
+		.rom_ce_o(rom_ce),
 
-        .int_i(int_i),
+    	.int_i(int_i),
 
-        .ram_we_o(app_write_en),
-        .ram_addr_o(mem_addr_i),
-        .ram_sel_o(mem_sel_i),
-        .ram_data_o(ram_data_i),
-        .ram_data_i(ram_data_o),
-        .ram_ce_o(mem_ce_i),
-        
-        .timer_int_o(timer_int)         
-    
-    );
-    
-    inst_rom inst_rom0(
-        .ce(rom_ce),
-        .addr(inst_addr),
-        .inst(inst) 
-    );
+		.ram_we_o(app_write_en),
+		.ram_addr_o(mem_addr_i),
+		.ram_sel_o(mem_sel_i),
+		.ram_data_o(ram_data_i),
+		.ram_data_i(ram_data_o),
+		.ram_ce_o(mem_ce_i),
+		
+		.timer_int_o(timer_int)			
+	
+	);
+	
+	inst_rom inst_rom0(
+		.ce(rom_ce),
+		.addr(inst_addr),
+		.inst(inst)	
+	);
 
-    data_ram data_ram0(
-        .clk(clk_50M),
-        .ce(mem_ce_i),
-        .we(app_write_en),
-        .addr(mem_addr_i),
-        .sel(mem_sel_i),
-        .data_i(mem_data_i),
-        .data_o(mem_data_o) 
-    );
+	data_ram data_ram0(
+		.clk(clk_50M),
+		.ce(mem_ce_i),
+		.we(app_write_en),
+		.addr(mem_addr_i),
+		.sel(mem_sel_i),
+		.data_i(digit_data),
+		.data_o(mem_data_o)	
+	);
 
 
 endmodule
