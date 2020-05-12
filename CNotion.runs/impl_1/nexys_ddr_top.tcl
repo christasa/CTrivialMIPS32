@@ -65,7 +65,6 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
-  set_param xicom.use_bs_reader 1
   open_checkpoint nexys_ddr_top_routed.dcp
   set_property webtalk.parent_dir D:/coding/vivado/CNotion/CNotion.cache/wt [current_project]
   catch { write_mem_info -force nexys_ddr_top.mmi }

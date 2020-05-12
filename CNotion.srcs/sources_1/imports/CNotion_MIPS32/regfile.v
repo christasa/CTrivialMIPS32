@@ -6,17 +6,17 @@ module regfile(
 	input	wire	clk,
 	input wire		rst,
 	
-	//å†™ç«¯å£
+	//Ğ´¶Ë¿Ú
 	input wire		we,
 	input wire[`RegAddrBus]		waddr,
 	input wire[`RegBus]			wdata,
 	
-	//è¯»ç«¯å£1
+	//¶Á¶Ë¿Ú?1
 	input wire					re1,
 	input wire[`RegAddrBus]		raddr1,
 	output reg[`RegBus]         rdata1,
 	
-	//è¯»ç«¯å£2
+	//¶Á¶Ë¿Ú?2
 	input wire					re2,
 	input wire[`RegAddrBus]		raddr2,
 	output reg[`RegBus]         rdata2

@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,7 +37,6 @@ read_verilog -library xil_defaultlib {
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ctrl.v
-  D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/data_ram.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/div.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/ex_mem.v
@@ -52,6 +50,7 @@ read_verilog -library xil_defaultlib {
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/pc_reg.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/regfile.v
+  D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/rom.v
   D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v
 }
 read_ip -quiet D:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr.xci

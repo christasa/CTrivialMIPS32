@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Sun May 10 00:38:31 2020
+| Date         : Wed May 13 01:36:33 2020
 | Host         : Chris running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file nexys_ddr_top_timing_summary_routed.rpt -pb nexys_ddr_top_timing_summary_routed.pb -rpx nexys_ddr_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : nexys_ddr_top
@@ -52,7 +52,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 4125 register/latch pins with no clock driven by root clock pin: clk_50M (HIGH)
+ There are 4144 register/latch pins with no clock driven by root clock pin: clk_50M (HIGH)
 
  There are 20 register/latch pins with no clock driven by root clock pin: disp/clk_sys_reg/Q (HIGH)
 
@@ -81,21 +81,21 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 10509 pins that are not constrained for maximum delay. (HIGH)
+ There are 10515 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There are 18 input ports with no input delay specified. (HIGH)
+ There are 19 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
 
 6. checking no_output_delay
 ---------------------------
- There are 61 ports with no output delay specified. (HIGH)
+ There are 63 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 
@@ -140,7 +140,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.746        0.000                      0                   14           NA           NA                     NA                   NA           NA           NA                      NA                    NA  
+      1.929        0.000                      0                   14           NA           NA                     NA                   NA           NA           NA                      NA                    NA  
 
 
 All user specified timing constraints are met.
@@ -177,7 +177,7 @@ From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS
 
 Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-**default**                                     0.746        0.000                      0                   14                                                                        
+**default**                                     1.929        0.000                      0                   14                                                                        
 
 
 ------------------------------------------------------------------------------------------------
@@ -191,30 +191,30 @@ Path Group:  **default**
 From Clock:  
   To Clock:  
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.746ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        1.929ns,  Total Violation        0.000ns
 Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.746ns  (required time - arrival time)
+Slack (MET) :             1.929ns  (required time - arrival time)
   Source:                 u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
                             (rising edge-triggered cell FDPE)
   Destination:            u_ddr/u_sdram_ddr_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/phy_control_i/RESET
   Path Group:             **default**
   Path Type:              Max at Slow Process Corner
   Requirement:            5.000ns  (MaxDelay Path 5.000ns)
-  Data Path Delay:        4.254ns  (logic 0.456ns (10.720%)  route 3.798ns (89.280%))
+  Data Path Delay:        3.071ns  (logic 0.456ns (14.848%)  route 2.615ns (85.152%))
   Logic Levels:           1  (FDPE=1)
   Output Delay:           0.000ns
   Timing Exception:       MaxDelay Path 5.000ns -datapath_only
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X69Y63         FDPE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
-    SLICE_X69Y63         FDPE (Prop_fdpe_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/Q
-                         net (fo=48, routed)          3.798     4.254    u_ddr/u_sdram_ddr_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/in0
+    SLICE_X67Y77         FDPE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
+    SLICE_X67Y77         FDPE (Prop_fdpe_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/Q
+                         net (fo=48, routed)          2.615     3.071    u_ddr/u_sdram_ddr_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/in0
     PHY_CONTROL_X1Y1     PHY_CONTROL                                  r  u_ddr/u_sdram_ddr_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_mc_phy_wrapper/u_ddr_mc_phy/ddr_phy_4lanes_0.u_ddr_phy_4lanes/phy_control_i/RESET
   -------------------------------------------------------------------    -------------------
 
@@ -223,260 +223,260 @@ Slack (MET) :             0.746ns  (required time - arrival time)
                          output delay                -0.000     5.000    
   -------------------------------------------------------------------
                          required time                          5.000    
-                         arrival time                          -4.254    
+                         arrival time                          -3.071    
   -------------------------------------------------------------------
-                         slack                                  0.746    
+                         slack                                  1.929    
 
-Slack (MET) :             17.192ns  (required time - arrival time)
+Slack (MET) :             17.172ns  (required time - arrival time)
   Source:                 u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
                             (rising edge-triggered cell FDPE)
   Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.rst_r1_reg/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        2.713ns  (logic 0.456ns (16.806%)  route 2.257ns (83.194%))
+  Data Path Delay:        2.725ns  (logic 0.456ns (16.732%)  route 2.269ns (83.268%))
   Logic Levels:           1  (FDPE=1)
   Timing Exception:       MaxDelay Path 20.000ns -datapath_only
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X69Y63         FDPE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
-    SLICE_X69Y63         FDPE (Prop_fdpe_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/Q
-                         net (fo=48, routed)          2.257     2.713    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/in0
-    SLICE_X87Y51         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.rst_r1_reg/D
+    SLICE_X67Y77         FDPE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/C
+    SLICE_X67Y77         FDPE (Prop_fdpe_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/u_ddr2_infrastructure/rstdiv0_sync_r1_reg_rep/Q
+                         net (fo=48, routed)          2.269     2.725    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/in0
+    SLICE_X52Y77         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.rst_r1_reg/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
-    SLICE_X87Y51         FDRE (Setup_fdre_C_D)       -0.095    19.905    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.rst_r1_reg
+    SLICE_X52Y77         FDRE (Setup_fdre_C_D)       -0.103    19.897    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.rst_r1_reg
   -------------------------------------------------------------------
-                         required time                         19.905    
-                         arrival time                          -2.713    
+                         required time                         19.897    
+                         arrival time                          -2.725    
   -------------------------------------------------------------------
-                         slack                                 17.192    
+                         slack                                 17.172    
 
-Slack (MET) :             18.710ns  (required time - arrival time)
-  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[1]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[1]/D
-  Path Group:             **default**
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        1.243ns  (logic 0.456ns (36.697%)  route 0.787ns (63.303%))
-  Logic Levels:           1  (FDRE=1)
-  Timing Exception:       MaxDelay Path 20.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X85Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[1]/C
-    SLICE_X85Y53         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[1]/Q
-                         net (fo=1, routed)           0.787     1.243    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[1]
-    SLICE_X85Y54         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[1]/D
-  -------------------------------------------------------------------    -------------------
-
-                         max delay                   20.000    20.000    
-                         clock pessimism              0.000    20.000    
-    SLICE_X85Y54         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[1]
-  -------------------------------------------------------------------
-                         required time                         19.953    
-                         arrival time                          -1.243    
-  -------------------------------------------------------------------
-                         slack                                 18.710    
-
-Slack (MET) :             18.809ns  (required time - arrival time)
+Slack (MET) :             18.854ns  (required time - arrival time)
   Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        1.144ns  (logic 0.518ns (45.289%)  route 0.626ns (54.711%))
+  Data Path Delay:        1.099ns  (logic 0.456ns (41.498%)  route 0.643ns (58.502%))
   Logic Levels:           1  (FDRE=1)
   Timing Exception:       MaxDelay Path 20.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/C
-    SLICE_X84Y53         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/Q
-                         net (fo=1, routed)           0.626     1.144    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[3]
-    SLICE_X86Y56         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]/D
+    SLICE_X52Y78         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/C
+    SLICE_X52Y78         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[3]/Q
+                         net (fo=1, routed)           0.643     1.099    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[3]
+    SLICE_X53Y77         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
                          clock pessimism              0.000    20.000    
-    SLICE_X86Y56         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]
+    SLICE_X53Y77         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[3]
   -------------------------------------------------------------------
                          required time                         19.953    
-                         arrival time                          -1.144    
+                         arrival time                          -1.099    
   -------------------------------------------------------------------
-                         slack                                 18.809    
+                         slack                                 18.854    
 
-Slack (MET) :             18.814ns  (required time - arrival time)
-  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[6]/C
+Slack (MET) :             18.862ns  (required time - arrival time)
+  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[8]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[6]/D
+  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[8]/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        0.962ns  (logic 0.478ns (49.693%)  route 0.484ns (50.307%))
+  Data Path Delay:        1.122ns  (logic 0.456ns (40.657%)  route 0.666ns (59.343%))
   Logic Levels:           1  (FDRE=1)
   Timing Exception:       MaxDelay Path 20.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[6]/C
-    SLICE_X84Y53         FDRE (Prop_fdre_C_Q)         0.478     0.478 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[6]/Q
-                         net (fo=1, routed)           0.484     0.962    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[6]
-    SLICE_X87Y52         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[6]/D
+    SLICE_X53Y81         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[8]/C
+    SLICE_X53Y81         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[8]/Q
+                         net (fo=1, routed)           0.666     1.122    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[8]
+    SLICE_X56Y79         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[8]/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
                          clock pessimism              0.000    20.000    
-    SLICE_X87Y52         FDRE (Setup_fdre_C_D)       -0.224    19.776    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[6]
+    SLICE_X56Y79         FDRE (Setup_fdre_C_D)       -0.016    19.984    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[8]
   -------------------------------------------------------------------
-                         required time                         19.776    
-                         arrival time                          -0.962    
+                         required time                         19.984    
+                         arrival time                          -1.122    
   -------------------------------------------------------------------
-                         slack                                 18.814    
+                         slack                                 18.862    
 
-Slack (MET) :             18.854ns  (required time - arrival time)
+Slack (MET) :             18.901ns  (required time - arrival time)
   Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        1.130ns  (logic 0.518ns (45.842%)  route 0.612ns (54.158%))
+  Data Path Delay:        1.083ns  (logic 0.456ns (42.103%)  route 0.627ns (57.897%))
   Logic Levels:           1  (FDRE=1)
   Timing Exception:       MaxDelay Path 20.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/C
-    SLICE_X84Y53         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/Q
-                         net (fo=1, routed)           0.612     1.130    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[4]
-    SLICE_X88Y55         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]/D
+    SLICE_X52Y81         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/C
+    SLICE_X52Y81         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[4]/Q
+                         net (fo=1, routed)           0.627     1.083    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[4]
+    SLICE_X54Y78         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
                          clock pessimism              0.000    20.000    
-    SLICE_X88Y55         FDRE (Setup_fdre_C_D)       -0.016    19.984    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]
+    SLICE_X54Y78         FDRE (Setup_fdre_C_D)       -0.016    19.984    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[4]
   -------------------------------------------------------------------
                          required time                         19.984    
-                         arrival time                          -1.130    
+                         arrival time                          -1.083    
   -------------------------------------------------------------------
-                         slack                                 18.854    
+                         slack                                 18.901    
 
-Slack (MET) :             18.863ns  (required time - arrival time)
-  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[9]/C
+Slack (MET) :             18.970ns  (required time - arrival time)
+  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[10]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[9]/D
+  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[10]/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        0.946ns  (logic 0.419ns (44.285%)  route 0.527ns (55.715%))
+  Data Path Delay:        0.983ns  (logic 0.456ns (46.376%)  route 0.527ns (53.624%))
   Logic Levels:           1  (FDRE=1)
   Timing Exception:       MaxDelay Path 20.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X85Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[9]/C
-    SLICE_X85Y53         FDRE (Prop_fdre_C_Q)         0.419     0.419 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[9]/Q
-                         net (fo=1, routed)           0.527     0.946    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[9]
-    SLICE_X88Y53         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[9]/D
+    SLICE_X52Y81         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[10]/C
+    SLICE_X52Y81         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[10]/Q
+                         net (fo=1, routed)           0.527     0.983    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[10]
+    SLICE_X57Y76         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[10]/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
                          clock pessimism              0.000    20.000    
-    SLICE_X88Y53         FDRE (Setup_fdre_C_D)       -0.191    19.809    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[9]
-  -------------------------------------------------------------------
-                         required time                         19.809    
-                         arrival time                          -0.946    
-  -------------------------------------------------------------------
-                         slack                                 18.863    
-
-Slack (MET) :             18.865ns  (required time - arrival time)
-  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D
-  Path Group:             **default**
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        1.088ns  (logic 0.456ns (41.900%)  route 0.632ns (58.100%))
-  Logic Levels:           1  (FDRE=1)
-  Timing Exception:       MaxDelay Path 20.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X85Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C
-    SLICE_X85Y53         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/Q
-                         net (fo=1, routed)           0.632     1.088    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[0]
-    SLICE_X87Y55         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-                         max delay                   20.000    20.000    
-                         clock pessimism              0.000    20.000    
-    SLICE_X87Y55         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]
+    SLICE_X57Y76         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[10]
   -------------------------------------------------------------------
                          required time                         19.953    
-                         arrival time                          -1.088    
+                         arrival time                          -0.983    
   -------------------------------------------------------------------
-                         slack                                 18.865    
+                         slack                                 18.970    
 
-Slack (MET) :             18.942ns  (required time - arrival time)
-  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[7]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[7]/D
-  Path Group:             **default**
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        0.839ns  (logic 0.478ns (56.953%)  route 0.361ns (43.047%))
-  Logic Levels:           1  (FDRE=1)
-  Timing Exception:       MaxDelay Path 20.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X84Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[7]/C
-    SLICE_X84Y53         FDRE (Prop_fdre_C_Q)         0.478     0.478 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[7]/Q
-                         net (fo=1, routed)           0.361     0.839    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[7]
-    SLICE_X86Y52         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[7]/D
-  -------------------------------------------------------------------    -------------------
-
-                         max delay                   20.000    20.000    
-                         clock pessimism              0.000    20.000    
-    SLICE_X86Y52         FDRE (Setup_fdre_C_D)       -0.219    19.781    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[7]
-  -------------------------------------------------------------------
-                         required time                         19.781    
-                         arrival time                          -0.839    
-  -------------------------------------------------------------------
-                         slack                                 18.942    
-
-Slack (MET) :             18.955ns  (required time - arrival time)
+Slack (MET) :             18.972ns  (required time - arrival time)
   Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/C
                             (rising edge-triggered cell FDRE)
   Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]/D
   Path Group:             **default**
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            20.000ns  (MaxDelay Path 20.000ns)
-  Data Path Delay:        0.998ns  (logic 0.518ns (51.897%)  route 0.480ns (48.103%))
+  Data Path Delay:        0.981ns  (logic 0.456ns (46.467%)  route 0.525ns (53.533%))
   Logic Levels:           1  (FDRE=1)
   Timing Exception:       MaxDelay Path 20.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X84Y53         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/C
-    SLICE_X84Y53         FDRE (Prop_fdre_C_Q)         0.518     0.518 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/Q
-                         net (fo=1, routed)           0.480     0.998    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[11]
-    SLICE_X89Y52         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]/D
+    SLICE_X52Y81         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/C
+    SLICE_X52Y81         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[11]/Q
+                         net (fo=1, routed)           0.525     0.981    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[11]
+    SLICE_X53Y79         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]/D
   -------------------------------------------------------------------    -------------------
 
                          max delay                   20.000    20.000    
                          clock pessimism              0.000    20.000    
-    SLICE_X89Y52         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]
+    SLICE_X53Y79         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[11]
   -------------------------------------------------------------------
                          required time                         19.953    
-                         arrival time                          -0.998    
+                         arrival time                          -0.981    
   -------------------------------------------------------------------
-                         slack                                 18.955    
+                         slack                                 18.972    
+
+Slack (MET) :             18.998ns  (required time - arrival time)
+  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[2]/D
+  Path Group:             **default**
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
+  Data Path Delay:        0.986ns  (logic 0.456ns (46.230%)  route 0.530ns (53.770%))
+  Logic Levels:           1  (FDRE=1)
+  Timing Exception:       MaxDelay Path 20.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y81         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[2]/C
+    SLICE_X52Y81         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[2]/Q
+                         net (fo=1, routed)           0.530     0.986    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[2]
+    SLICE_X54Y80         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   20.000    20.000    
+                         clock pessimism              0.000    20.000    
+    SLICE_X54Y80         FDRE (Setup_fdre_C_D)       -0.016    19.984    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[2]
+  -------------------------------------------------------------------
+                         required time                         19.984    
+                         arrival time                          -0.986    
+  -------------------------------------------------------------------
+                         slack                                 18.998    
+
+Slack (MET) :             19.008ns  (required time - arrival time)
+  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[5]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[5]/D
+  Path Group:             **default**
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
+  Data Path Delay:        0.945ns  (logic 0.456ns (48.267%)  route 0.489ns (51.733%))
+  Logic Levels:           1  (FDRE=1)
+  Timing Exception:       MaxDelay Path 20.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y78         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[5]/C
+    SLICE_X52Y78         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[5]/Q
+                         net (fo=1, routed)           0.489     0.945    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[5]
+    SLICE_X57Y78         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   20.000    20.000    
+                         clock pessimism              0.000    20.000    
+    SLICE_X57Y78         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[5]
+  -------------------------------------------------------------------
+                         required time                         19.953    
+                         arrival time                          -0.945    
+  -------------------------------------------------------------------
+                         slack                                 19.008    
+
+Slack (MET) :             19.014ns  (required time - arrival time)
+  Source:                 u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D
+  Path Group:             **default**
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (MaxDelay Path 20.000ns)
+  Data Path Delay:        0.939ns  (logic 0.456ns (48.577%)  route 0.483ns (51.423%))
+  Logic Levels:           1  (FDRE=1)
+  Timing Exception:       MaxDelay Path 20.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y78         FDRE                         0.000     0.000 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/C
+    SLICE_X52Y78         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/xadc_supplied_temperature.temperature_reg[0]/Q
+                         net (fo=1, routed)           0.483     0.939    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_lcl[0]
+    SLICE_X55Y76         FDRE                                         r  u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         max delay                   20.000    20.000    
+                         clock pessimism              0.000    20.000    
+    SLICE_X55Y76         FDRE (Setup_fdre_C_D)       -0.047    19.953    u_ddr/u_sdram_ddr_mig/temp_mon_enabled.u_tempmon/device_temp_sync_r1_reg[0]
+  -------------------------------------------------------------------
+                         required time                         19.953    
+                         arrival time                          -0.939    
+  -------------------------------------------------------------------
+                         slack                                 19.014    
 
 
 

@@ -2,12 +2,12 @@
 
 module mem(
 
-	input wire										rst,
+	input wire					   rst,
 	
 	//来自执行阶段的信息	
 	input wire[`RegAddrBus]       wd_i,
 	input wire                    wreg_i,
-	input wire[`RegBus]					  wdata_i,
+	input wire[`RegBus]			   wdata_i,
 	input wire[`RegBus]           hi_i,
 	input wire[`RegBus]           lo_i,
 	input wire                    whilo_i,	
@@ -61,7 +61,7 @@ module mem(
 	
 	//送到memory的信息
 	output reg[`RegBus]          mem_addr_o,
-	output wire									 mem_we_o,
+	output wire					 mem_we_o,
 	output reg[3:0]              mem_sel_o,
 	output reg[`RegBus]          mem_data_o,
 	output reg                   mem_ce_o,
