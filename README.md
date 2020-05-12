@@ -42,9 +42,9 @@
     > SDRAM:使用vivado自带的IP核进行配置，Nexy4s DDR2大小为128M
     
 ## TODO
-- [ ] SDRAM的配置
-- [ ] flash的配置
-- [ ] uart串口数据的同步
+- [x] SDRAM的配置
+- [x] flash的配置
+- [x] uart串口数据的同步(慢慢调orz)
 - [x] 数据流图实现
 - [x] vivado初步上板验证
 - [ ] clk时钟的调试

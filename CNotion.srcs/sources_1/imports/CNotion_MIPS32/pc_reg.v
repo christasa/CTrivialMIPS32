@@ -15,14 +15,15 @@ module pc_reg(
 	input wire                    branch_flag_i,
 	input wire[`RegBus]           branch_target_address_i,
 	
-	output reg[`InstAddrBus]			pc,
+	output reg[`InstAddrBus]	  pc,
 	output reg                    ce
 	
 );
 
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
-			pc <= 32'h30000000;  // flash 从0x30000000开始读指令
+//			pc <= 32'hbfc00000;  // flash 固件开始位置
+            pc <= 32'h30000000;
 		end else begin
 			if(flush == 1'b1) begin
 				pc <= new_pc;

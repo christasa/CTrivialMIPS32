@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Sun May 10 00:34:48 2020
-# Process ID: 14300
+# Start of session at: Wed May 13 01:34:02 2020
+# Process ID: 13492
 # Current directory: D:/coding/vivado/CNotion/CNotion.runs/synth_1
 # Command line: vivado.exe -log nexys_ddr_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_ddr_top.tcl
 # Log file: D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.vds

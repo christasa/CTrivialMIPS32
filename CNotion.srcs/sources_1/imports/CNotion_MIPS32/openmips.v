@@ -472,7 +472,7 @@ module openmips(
 		.cp0_reg_write_addr_i(mem_cp0_reg_write_addr_i),
 		.cp0_reg_data_i(mem_cp0_reg_data_i),
 
-    .excepttype_i(mem_excepttype_i),
+        .excepttype_i(mem_excepttype_i),
 		.is_in_delayslot_i(mem_is_in_delayslot_i),
 		.current_inst_address_i(mem_current_inst_address_i),	
 		
@@ -481,7 +481,7 @@ module openmips(
 		.cp0_epc_i(cp0_epc),
 		
 		//回写阶段的指令是否要写CP0，用来检测数据相关
-  	.wb_cp0_reg_we(wb_cp0_reg_we_i),
+  	    .wb_cp0_reg_we(wb_cp0_reg_we_i),
 		.wb_cp0_reg_write_addr(wb_cp0_reg_write_addr_i),
 		.wb_cp0_reg_data(wb_cp0_reg_data_i),	  
 

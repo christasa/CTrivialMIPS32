@@ -50,8 +50,8 @@ module nexys_ddr_top(
     input  wire    sdi,
     output reg  cs_n,
     output reg  sdo,
-    output reg  wp_n,
-    output reg  hld_n
+    output wire  wp_n,
+    output wire  hld_n
 
 );
 
@@ -70,7 +70,7 @@ module nexys_ddr_top(
 reg[7:0] number;
 Disp disp(.clk(clk_50M), .sseg_ca(SSEG_CA), .sseg_an(SSEG_AN), .number(number)); // 显示数码管
 
-assign UART_RTS = 1'b0;
+assign UART_RTS = 1'b0;  //串口信号始终为1
 
 reg app_en; // 指令使能，当app_addr和app_cmd都准备好后，将其拉高来送出指令
 reg app_wdf_end; // 写数据末端信号，当输入的数据是最后一个时，将此信号拉高，表示数据已送完
@@ -88,7 +88,7 @@ wire app_sr_active; // 保留输出引脚，无视
 wire app_ref_ack; // 该信号升高表示refresh刷新指令被确认
 wire app_zq_ack; // 该信号升高表示ZQ校准指令被确认
 wire init_calib_complete;
-wire app_write_en;
+wire app_wire_en; //写数据准备,app_wdf_rdy不让动
 
 
 
@@ -101,18 +101,66 @@ reg [15:0] counter = 16'h0;
 parameter cnt_init = 16'h1;	// minimum: 1
 reg [26:0] addr0 = 27'h000_0008;
 reg [26:0] addr1 = 27'h003_0100;
-reg [127:0] data0 = 128'h1111_2222_3333_4444_5555_6666_7777_8888;
-reg [127:0] data1 = 128'h9999_0000_aaaa_bbbb_cccc_dddd_eeee_ffff;
+reg [127:0] data = 128'h1111_2222_3333_4444_5555_6666_7777_8888;
 reg [1:0] stop_w = 2'b00;
 (* mark_debug = "TRUE" *) reg [1:0] read_valid = 2'b0;
 (* mark_debug = "TRUE" *) reg [127:0] read_data = 128'h0;
 always@ (posedge app_rd_data_valid) begin
     read_data = app_rd_data;
-    read_valid[0] = (app_rd_data == data0);
-    read_valid[1] = (app_rd_data == data1);
+    read_valid[0] = (app_rd_data == data);
+    read_valid[1] = (app_rd_data == data);
 end
-	
 
+// Flash 读数据
+assign wp_n  = 1'b1;
+assign hld_n = 1'b1;
+
+// 定义flash读取信号
+parameter IDLE       = 4'b0000;
+parameter START      = 4'b0001;
+parameter INST_OUT   = 4'b0010;
+parameter ADDR1_OUT  = 4'b0011;
+parameter ADDR2_OUT  = 4'b0100;
+parameter ADDR3_OUT  = 4'b0101;
+parameter READ_DATA  = 4'b0111;
+parameter ENDING     = 4'b1000;	
+
+reg         sck;
+reg  [3:0]  state;
+reg  [3:0]  next_state;
+reg  [7:0]   instruction;
+reg  [7:0]   datain_shift;
+reg  [7:0]   datain;
+wire [7:0] instouch;
+
+assign instouch = instruction;
+
+
+reg  [7:0]  dataout;
+reg         sck_en;
+reg  [2:0]  sck_en_d;
+reg  [2:0]  cs_n_d;
+
+(* dont_touch = "true" *)reg  [7:0]  inst_count;
+reg         temp;
+reg  [3:0]  sdo_count;
+reg  [2:0]	data_count;
+reg  [15:0] page_count;
+reg  [7:0]  wait_count;
+wire         addr_req;  // Address writing requested
+wire  [15:0] rd_cnt;  // Number of bytes to be read
+wire  [23:0] addr;
+
+
+rom roms(
+    .clk(clk_50M),
+    .ce(rom_ce),
+    .inst_count(inst_count),
+    .instruction(instouch),
+    .addr(addr),
+    .addr_req(addr_req),
+    .rd_cnt(rd_cnt)
+);
 
 always@ (posedge clk_50M or negedge CPU_RESETN) begin
     if (CPU_RESETN == 1'b0) begin
@@ -124,10 +172,10 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
         app_wdf_data = 128'h0;
         app_wdf_end = 1'b0;
         app_wdf_wren = 1'b0;
+        state <= IDLE;
     end else begin
         if (counter == cnt_init && ~stop_w[0])
             if (app_rdy & app_wdf_rdy) begin
-                app_wdf_data = data0;
                 app_addr = addr0;
                 app_cmd = 3'b0;
                 app_wdf_wren = 1'b1;
@@ -146,7 +194,6 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
                 counter = counter - 16'h1;
         else if (counter == cnt_init + 8 && ~stop_w[1])
             if (app_rdy & app_wdf_rdy) begin
-                app_wdf_data = data1;
                 app_addr = addr1;
                 app_cmd = 3'b0;
                 app_wdf_wren = 1'b1;
@@ -171,7 +218,9 @@ always@ (posedge clk_50M or negedge CPU_RESETN) begin
             app_en = 1'b0;
         
         counter = counter + 16'h1;
+        state <= next_state;
     end
+    
 end
 
 sdram_ddr u_ddr (
@@ -224,15 +273,9 @@ sdram_ddr u_ddr (
 
 
 reg [`RegBus] digit_data;
-//reg [`RegBus] write_data;
+wire[`RegBus] digit_data_o;
 
-//wire[`RegBus] mem_data_i = app_rd_data[`RegBus];
-//wire[`RegBus] mem_data_o = app_wdf_data[`RegBus];
-wire[`RegBus] mem_data_i;
-wire[`RegBus] mem_data_o;
-wire[`RegBus] ram_data_i;
-wire[`RegBus] ram_data_o;
-
+assign digit_data_o = app_wdf_data[`RegBus];
 
 //assign app_wdf_data[`RegBus] = write_data;
 always@ (posedge clk_50M) begin
@@ -266,6 +309,20 @@ always @(posedge clk_50M) begin
         ext_uart_tx_reg <= 8'b0;
         ext_uart_start_reg <= 1'b0;
         counters <= 2'b0;
+        next_state  <= IDLE;
+		sck_en      <= 1'b0;
+		cs_n_d[0]   <= 1'b1;
+		dataout     <= 8'd0;
+		data[31:0]  <=32'b0;
+		sdo_count   <= 4'd0;
+		data_count  <= 3'd0;
+		sdo         <= 1'b0;
+		datain      <= 8'd0;
+        inst_count  <= 8'd0;
+        temp        <= 1'b0;
+        page_count  <= 16'd0;
+        wait_count  <= 8'd0;
+        
     end else begin
         if (ext_uart_start) begin
             ext_uart_tx_reg <= ext_uart_tx;
@@ -278,8 +335,205 @@ always @(posedge clk_50M) begin
                 ext_uart_start_reg <= 1'b0;
             end
         end
+        case(state)
+		IDLE: 
+		begin	// IDLE state
+			next_state <= START;
+            wait_count <= 8'd0;
+		end
+		START:
+		begin	// enable SCK and CS
+			sck_en <= 1'b1;
+			cs_n_d[0]  <= 1'b0;
+			next_state <= INST_OUT;
+		end
+		INST_OUT:
+		begin	// send out instruction
+			if(sdo_count == 4'd1) begin
+				{sdo, dataout[6:0]} <= instruction;
+			end
+			else if(sdo_count[0]) begin
+				{sdo, dataout[6:0]} <= {dataout[6:0],1'b0};
+			end
+			
+			if(sdo_count != 4'd15) begin
+				sdo_count <= sdo_count + 4'd1;
+			end
+			else begin
+				sdo_count  <= 4'd0;
+				next_state <= (addr_req) ?  ADDR1_OUT : ((rd_cnt==16'd0) ? ENDING : READ_DATA);
+			end
+		end
+		ADDR1_OUT:
+		begin	// send out address[23:16]
+			if(sdo_count == 4'd1) begin
+				{sdo, dataout[6:0]} <= addr[23:16];
+			end
+			else if(sdo_count[0]) begin
+				{sdo, dataout[6:0]} <= {dataout[6:0],1'b0};
+			end
+			
+			if(sdo_count != 4'd15) begin
+				sdo_count <= sdo_count + 4'd1;
+			end
+			else begin
+				sdo_count  <= 4'd0;
+				next_state <= ADDR2_OUT;
+			end
+		end
+		ADDR2_OUT:
+		begin	// send out address[15:8]
+			if(sdo_count == 4'd1) begin
+				{sdo, dataout[6:0]} <= addr[15:8];
+			end
+			else if(sdo_count[0]) begin
+				{sdo, dataout[6:0]} <= {dataout[6:0],1'b0};
+			end
+			
+			if(sdo_count != 4'd15) begin
+				sdo_count <= sdo_count + 4'd1;
+			end
+			else begin
+				sdo_count  <= 4'd0;
+				next_state <= ADDR3_OUT;
+			end
+		end
+		ADDR3_OUT:
+		begin	// send out address[7:0]
+			if(sdo_count == 4'd1) begin
+				{sdo, dataout[6:0]} <= addr[7:0];
+			end
+			else if(sdo_count[0]) begin
+				{sdo, dataout[6:0]} <= {dataout[6:0],1'b0};
+			end
+			
+			if(sdo_count != 4'd15) begin
+				sdo_count <= sdo_count + 4'd1;
+			end
+			else begin
+				sdo_count  <= 4'd0;
+				next_state <= ((rd_cnt==16'd0) ? ENDING : READ_DATA);
+                page_count <= 16'd0;
+			end
+		end
+		READ_DATA:
+		begin	// get the first data from flash
+            if(~sdo_count[0]) begin
+                datain_shift <= {datain_shift[6:0],sdi};
+            end
+            
+            if(sdo_count == 4'd1) begin
+                datain <= {datain_shift, sdi};
+                ext_uart_tx_reg <= datain; // flash读取到的数据发送到串口
+                case (data_count)
+                3'd0:begin
+                	data[32:0] <= {data[31:8], datain};
+                	data_count <= data_count + 3'd1;
+                end
+                3'd1:begin
+                	data[32:0] <={data[31:16], datain, data[7:0]};
+                	data_count <= data_count + 3'd1;
+                end
+                3'd2:begin
+                	data[32:0] <={data[31:24], datain, data[15:0]};
+                	data_count <= data_count + 3'd1;
+                end
+                3'd3:begin
+                	data[32:0] <={datain, data[23:0]};
+                	data_count <= data_count + 3'd1;
+                end
+                default: begin
+                	data[32:0] <= 32'b0;
+                	data_count <= 3'b0;
+                end
+
+                endcase
+            end
+            
+			if(sdo_count != 4'd15) begin
+				sdo_count <= sdo_count + 4'd1;
+			end
+			else begin
+                page_count <= page_count + 16'd1;
+				sdo_count  <= 4'd0;
+				next_state <= (page_count < (rd_cnt-16'd1)) ? READ_DATA : ENDING;
+            end
+		end
+		ENDING:
+		begin	//disable SCK and CS, wait for 32 clock cycles
+            if(wait_count != 8'd64) begin
+                wait_count <= wait_count + 8'd1;
+                next_state <= ENDING;
+            end
+            else begin
+                if(instruction == 8'h05 && datain[0]) begin // If in RDSR1, wait until the process ended
+                    {inst_count,temp} <= {inst_count,temp};
+                end
+                else begin
+                    {inst_count,temp} <= {inst_count,temp} + 9'd1;
+                end
+                next_state <= IDLE;
+            end
+			sck_en <= 1'b0;
+			cs_n_d[0] <= 1'b1;
+            sdo_count <= 4'd0;
+            data_count <= 3'd0;
+            page_count <= 16'd0;
+		end
+		endcase
+		
     end
 end
+
+// SPI接口逻辑，识别最后一段数据
+
+always @(posedge clk_50M) begin
+    sck_en_d <= {sck_en_d[1:0],sck_en};
+end
+
+always @(posedge clk_50M ) begin
+	if(~CPU_RESETN) begin
+		sck <= 1'b0;
+	end
+	else if(sck_en_d[2] & sck_en) begin
+		sck <= ~sck;
+	end
+    else begin
+        sck <= 1'b0;
+    end
+end
+
+always @(posedge clk_50M ) begin
+    if(~CPU_RESETN) begin
+        {cs_n,cs_n_d[2:1]} <= 3'h7;
+    end
+    else begin
+        {cs_n,cs_n_d[2:1]} <= cs_n_d;
+    end
+end
+
+STARTUPE2
+#(
+.PROG_USR("FALSE"),
+.SIM_CCLK_FREQ(10.0)
+)
+STARTUPE2_inst
+(
+  .CFGCLK     (),
+  .CFGMCLK    (),
+  .EOS        (),
+  .PREQ       (),
+  .CLK        (1'b0),
+  .GSR        (1'b0),
+  .GTS        (1'b0),
+  .KEYCLEARB  (1'b0),
+  .PACK       (1'b0),
+  .USRCCLKO   (sck),      // First three cycles after config ignored, see AR# 52626
+  .USRCCLKTS  (1'b0),     // 0 to enable CCLK output
+  .USRDONEO   (1'b1),     // Shouldn't matter if tristate is high, but generates a warning if tied low.
+  .USRDONETS  (1'b1)      // 1 to tristate DONE output
+);
+
 
 async_receiver #(.ClkFrequency(50000000),.Baud(115200)) //接收模块，115200无检验位
     ext_uart_r(
@@ -336,11 +590,11 @@ end
 
     	.int_i(int_i),
 
-		.ram_we_o(app_write_en),
+		.ram_we_o(app_wire_en),
 		.ram_addr_o(mem_addr_i),
 		.ram_sel_o(mem_sel_i),
-		.ram_data_o(ram_data_i),
-		.ram_data_i(ram_data_o),
+		.ram_data_o(digit_data_o),    // 写ram数据
+		.ram_data_i(digit_data),    // 读取数据ram的内容
 		.ram_ce_o(mem_ce_i),
 		
 		.timer_int_o(timer_int)			
@@ -353,15 +607,15 @@ end
 		.inst(inst)	
 	);
 
-	data_ram data_ram0(
-		.clk(clk_50M),
-		.ce(mem_ce_i),
-		.we(app_write_en),
-		.addr(mem_addr_i),
-		.sel(mem_sel_i),
-		.data_i(digit_data),
-		.data_o(mem_data_o)	
-	);
+//	data_ram data_ram0(
+//		.clk(clk_50M),
+//		.ce(mem_ce_i),
+//		.we(app_wdf_rdy),
+//		.addr(mem_addr_i),
+//		.sel(mem_sel_i),
+//		.data_i(digit_data),
+//		.data_o(mem_data_o)	
+//	);
 
 
 endmodule

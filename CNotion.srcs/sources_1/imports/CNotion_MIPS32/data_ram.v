@@ -3,13 +3,13 @@
 
 module data_ram(
 
-	input	wire	clk,
-	input wire		ce,
-	input wire		we,
+	input wire	clk,
+	input wire	ce,
+	input wire	we,
 	input wire[`DataAddrBus]	addr,
 	input wire[3:0]			sel,
 	input  [`DataBus]	data_i,
-	output reg[`DataBus]	data_o
+	output reg [`DataBus]	data_o
 	
 );
 
@@ -20,7 +20,7 @@ module data_ram(
 
 	always @ (posedge clk) begin
 		if (ce == `ChipDisable) begin
-			//data_o <= ZeroWord;
+			//data_o <= `ZeroWord;
 		end else if(we == `WriteEnable) begin
 			  if (sel[3] == 1'b1) begin
 		      data_mem3[addr[`DataMemNumLog2+1:2]] <= data_i[31:24];
