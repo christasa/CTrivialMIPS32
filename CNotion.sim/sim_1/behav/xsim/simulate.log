@@ -1,0 +1,57 @@
+Vivado Simulator 2018.3
+Time resolution is 1 fs
+WARNING: file design.txt could not be opened
+ *** Warning: The analog data file design.txt for XADC instance nexys_ddr_top.u_ddr.u_sdram_ddr_mig.temp_mon_enabled.u_tempmon.xadc_supplied_temperature.XADC_inst was not found. Use the SIM_MONITOR_FILE parameter to specify the analog data file name or use the default name: design.txt.
+
+############# Write Clocks PLLE2_ADV Parameters #############
+
+nCK_PER_CLK      =       4
+CLK_PERIOD       =   10000
+CLKIN1_PERIOD    =  10.000
+DIVCLK_DIVIDE    =       1
+CLKFBOUT_MULT    =      13
+VCO_PERIOD       =   769.0
+CLKOUT0_DIVIDE_F =       2
+CLKOUT1_DIVIDE   =       4
+CLKOUT2_DIVIDE   =      64
+CLKOUT3_DIVIDE   =      16
+CLKOUT0_PERIOD   =    1538
+CLKOUT1_PERIOD   =    3076
+CLKOUT2_PERIOD   =   49216
+CLKOUT3_PERIOD   =   12304
+CLKOUT4_PERIOD   =    6152
+############################################################
+
+############# MMCME2_ADV Parameters #############
+
+MMCM_MULT_F           =          14
+MMCM_VCO_FREQ (MHz)   = 1200.000
+MMCM_VCO_PERIOD       = 833.333
+#################################################
+
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : BYTE_LANES_B0 = f BYTE_LANES_B1 = 0 DATA_CTL_B0 = 5 DATA_CTL_B1 = 0
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : HIGHEST_LANE =           4 HIGHEST_LANE_B0 =           4 HIGHEST_LANE_B1 =           0
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : HIGHEST_BANK =           1
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : FREQ_REF_PERIOD         = 1538.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : DDR_TCK                 = 3077 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_S2_TAPS_SIZE         = 12.02 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_CIRC_BUF_EARLY       = 1 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_CIRC_BUF_OFFSET      = 1610.30 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_CIRC_BUF_META_ZONE   = 200.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_STG2_FINE_INTR_DLY   = 890.73 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_STG2_COARSE_INTR_DLY = 575.97 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_STG2_INTRINSIC_DELAY = 1466.70 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_CIRC_BUF_DELAY       = 60 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_INTRINSIC_DELAY      = 1466.70 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_DELAY                = 2187.64 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PO_OCLK_DELAY           = 0 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : L_PHY_0_PO_FINE_DELAY   = 60 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_STG1_INTRINSIC_DELAY = 0.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_STG2_INTRINSIC_DELAY = 865.48 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_INTRINSIC_DELAY      = 865.48 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_MAX_STG2_DELAY       = 756.98 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_OFFSET               = 123.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : PI_STG2_DELAY           = 123.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy :PI_STG2_DELAY_CAND       = 123.00 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : DEFAULT_RCLK_DELAY      = 10 
+nexys_ddr_top.u_ddr.u_sdram_ddr_mig.u_memc_ui_top_std.mem_intfc0.ddr_phy_top0.u_ddr_mc_phy_wrapper.u_ddr_mc_phy : RCLK_SELECT_EDGE        = 111 

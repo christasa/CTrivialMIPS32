@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed May 13 01:36:33 2020
+| Date             : Fri Jun 26 02:00:05 2020
 | Host             : Chris running 64-bit major release  (build 9200)
 | Command          : report_power -file nexys_ddr_top_power_routed.rpt -pb nexys_ddr_top_power_summary_routed.pb -rpx nexys_ddr_top_power_routed.rpx
 | Design           : nexys_ddr_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 24.836 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 27.111 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 24.032                           |
+| Dynamic (W)              | 26.307                           |
 | Device Static (W)        | 0.804                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,24 +52,24 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic              |     3.604 |     8399 |       --- |             --- |
-|   LUT as Logic           |     3.120 |     3241 |     63400 |            5.11 |
-|   Register               |     0.244 |     3259 |    126800 |            2.57 |
-|   CARRY4                 |     0.110 |      136 |     15850 |            0.86 |
+| Slice Logic              |     3.591 |     8405 |       --- |             --- |
+|   LUT as Logic           |     3.107 |     3242 |     63400 |            5.11 |
+|   Register               |     0.244 |     3263 |    126800 |            2.57 |
+|   CARRY4                 |     0.109 |      136 |     15850 |            0.86 |
 |   LUT as Distributed RAM |     0.107 |      420 |     19000 |            2.21 |
 |   BUFG                   |     0.013 |        3 |        32 |            9.38 |
 |   LUT as Shift Register  |     0.010 |       17 |     19000 |            0.09 |
 |   F7/F8 Muxes            |     0.001 |        4 |     63400 |           <0.01 |
 |   Others                 |     0.000 |      128 |       --- |             --- |
 |   BUFR                   |     0.000 |        1 |       120 |            0.83 |
-| Signals                  |     4.268 |     6445 |       --- |             --- |
+| Signals                  |     4.362 |     6457 |       --- |             --- |
 | MMCM                     |     4.723 |        1 |         6 |           16.67 |
 | PLL                      |     4.141 |        1 |         6 |           16.67 |
-| I/O                      |     5.171 |       93 |       210 |           44.29 |
+| I/O                      |     7.364 |       99 |       210 |           47.14 |
 | PHASER                   |     2.004 |       14 |       --- |             --- |
 | XADC                     |     0.121 |        1 |       --- |             --- |
 | Static Power             |     0.804 |          |           |                 |
-| Total                    |    24.836 |          |           |                 |
+| Total                    |    27.111 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -79,9 +79,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    11.489 |      10.927 |      0.563 |
-| Vccaux    |       1.800 |     6.210 |       6.117 |      0.093 |
-| Vcco33    |       3.300 |     0.011 |       0.007 |      0.004 |
+| Vccint    |       1.000 |    11.596 |      11.033 |      0.563 |
+| Vccaux    |       1.800 |     6.290 |       6.197 |      0.093 |
+| Vcco33    |       3.300 |     0.625 |       0.621 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     1.104 |       1.100 |      0.004 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -146,25 +146,24 @@ Table of Contents
 +------------------------------------------------------------------------------------------+-----------+
 | Name                                                                                     | Power (W) |
 +------------------------------------------------------------------------------------------+-----------+
-| nexys_ddr_top                                                                            |    24.032 |
-|   disp                                                                                   |     0.054 |
+| nexys_ddr_top                                                                            |    26.307 |
+|   disp                                                                                   |     0.042 |
 |   ext_uart_t                                                                             |     0.018 |
 |     tickgen                                                                              |     0.018 |
-|   roms                                                                                   |     0.022 |
-|   u_ddr                                                                                  |    23.539 |
-|     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_0_5   |     0.001 |
+|   roms                                                                                   |     0.024 |
+|   u_ddr                                                                                  |    23.604 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_12_17 |     0.006 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_18_23 |     0.007 |
-|     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_30_35 |     0.001 |
+|     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_30_35 |     0.002 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_36_41 |     0.001 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_42_47 |     0.004 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_48_53 |     0.004 |
 |     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_54_59 |     0.004 |
-|     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_6_11  |     0.002 |
-|     u_sdram_ddr_mig                                                                      |    23.502 |
-|       temp_mon_enabled.u_tempmon                                                         |     0.271 |
-|       u_ddr2_infrastructure                                                              |     9.044 |
-|       u_memc_ui_top_std                                                                  |    14.186 |
+|     ddr_byte_lane_B.ddr_byte_lane_B/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_6_11  |     0.003 |
+|     u_sdram_ddr_mig                                                                      |    23.567 |
+|       temp_mon_enabled.u_tempmon                                                         |     0.303 |
+|       u_ddr2_infrastructure                                                              |     9.039 |
+|       u_memc_ui_top_std                                                                  |    14.226 |
 +------------------------------------------------------------------------------------------+-----------+
 
 
