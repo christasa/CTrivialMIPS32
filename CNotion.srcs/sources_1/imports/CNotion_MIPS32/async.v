@@ -22,7 +22,7 @@ module async_transmitter(
 // Assert TxD_start for (at least) one clock cycle to start transmission of TxD_data
 // TxD_data is latched so that it doesn't have to stay valid while it is being sent
 
-parameter ClkFrequency = 25000000;	// 25MHz
+parameter ClkFrequency = 50000000;	// 25MHz
 parameter Baud = 115200;
 
 generate
@@ -68,6 +68,7 @@ begin
 end
 
 assign TxD = (TxD_state<4) | (TxD_state[3] & TxD_shift[0]);  // put together the start, data and stop bits
+
 endmodule
 
 
@@ -86,7 +87,8 @@ module async_receiver(
 	output reg RxD_endofpacket = 0  // asserted for one clock cycle when a packet has been detected (i.e. RxD_idle is going high)
 );
 
-parameter ClkFrequency = 25000000; // 25MHz
+
+parameter ClkFrequency = 50000000; // 50MHz
 parameter Baud = 115200;
 
 parameter Oversampling = 8;  // needs to be a power of 2

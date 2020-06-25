@@ -6,6 +6,7 @@ module openmips_min_sopc_tb();
   reg     CLOCK_50;
   reg     rst;
   
+  
        
   initial begin
     CLOCK_50 = 1'b0;

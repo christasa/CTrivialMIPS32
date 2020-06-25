@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed May 13 01:34:43 2020
+| Date         : Fri Jun 26 01:56:14 2020
 | Host         : Chris running 64-bit major release  (build 9200)
 | Command      : report_utilization -file nexys_ddr_top_utilization_synth.rpt -pb nexys_ddr_top_utilization_synth.pb
 | Design       : nexys_ddr_top
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  184 |     0 |     63400 |  0.29 |
-|   LUT as Logic             |  183 |     0 |     63400 |  0.29 |
+| Slice LUTs*                |  187 |     0 |     63400 |  0.29 |
+|   LUT as Logic             |  186 |     0 |     63400 |  0.29 |
 |   LUT as Memory            |    1 |     0 |     19000 | <0.01 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    1 |     0 |           |       |
-| Slice Registers            |  351 |     0 |    126800 |  0.28 |
-|   Register as Flip Flop    |  351 |     0 |    126800 |  0.28 |
+| Slice Registers            |  356 |     0 |    126800 |  0.28 |
+|   Register as Flip Flop    |  356 |     0 |    126800 |  0.28 |
 |   Register as Latch        |    0 |     0 |    126800 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     15850 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 1     |          Yes |           - |          Set |
 | 25    |          Yes |           - |        Reset |
-| 18    |          Yes |         Set |            - |
-| 307   |          Yes |       Reset |            - |
+| 16    |          Yes |         Set |            - |
+| 314   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   47 |     0 |       210 | 22.38 |
+| Bonded IOB                  |   53 |     0 |       210 | 25.24 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -148,19 +148,19 @@ Table of Contents
 +-----------+------+---------------------+
 |  Ref Name | Used | Functional Category |
 +-----------+------+---------------------+
-| FDRE      |  307 |        Flop & Latch |
-| LUT3      |   51 |                 LUT |
-| LUT4      |   49 |                 LUT |
-| LUT6      |   45 |                 LUT |
-| LUT5      |   39 |                 LUT |
+| FDRE      |  314 |        Flop & Latch |
+| LUT3      |   50 |                 LUT |
+| LUT6      |   47 |                 LUT |
+| LUT4      |   47 |                 LUT |
+| LUT5      |   41 |                 LUT |
 | OBUF      |   38 |                  IO |
-| LUT2      |   35 |                 LUT |
+| LUT2      |   36 |                 LUT |
 | CARRY4    |   35 |          CarryLogic |
 | FDCE      |   25 |        Flop & Latch |
-| FDSE      |   18 |        Flop & Latch |
+| FDSE      |   16 |        Flop & Latch |
 | LUT1      |   10 |                 LUT |
+| IBUF      |    9 |                  IO |
 | OBUFT     |    6 |                  IO |
-| IBUF      |    3 |                  IO |
 | STARTUPE2 |    1 |              Others |
 | SRL16E    |    1 |  Distributed Memory |
 | FDPE      |    1 |        Flop & Latch |

@@ -1,4 +1,3 @@
-`default_nettype none
 `include "defines.v"
 
 module nexys_ddr_top(
@@ -39,15 +38,15 @@ module nexys_ddr_top(
 	output wire [0:0]	ddr2_odt,
 
     // 直连串口信号
-    output wire UART_TXD_IN,   // 直连串口写入数据
-    input wire UART_TXD, // 直连串口接收数据
-    output wire UART_CTS, // 串口发送数据信号，0是有效，1是无效
-    input wire UART_RTS, // 串口接受数据信号
+    output  UART_TXD_IN,   // 直连串口写入数据
+    input  UART_TXD, // 直连串口接收数据
+    output wire UART_CTS, // 串口发送数据信号，1是有效，0是无效
+    input   UART_RTS, // 串口接受数据信号
 
 
 
     // SPI Flash存储信号
-    input  wire    sdi,
+    input  wire sdi,
     output reg  cs_n,
     output reg  sdo,
     output wire  wp_n,
@@ -70,7 +69,10 @@ module nexys_ddr_top(
 reg[7:0] number;
 Disp disp(.clk(clk_50M), .sseg_ca(SSEG_CA), .sseg_an(SSEG_AN), .number(number)); // 显示数码管
 
-assign UART_RTS = 1'b0;  //串口信号始终为1
+
+//assign UART_RTS = 1'b0;  // 串口信号始终为有效
+//assign  UART_CTS = 1'b0 ; // true
+
 
 reg app_en; // 指令使能，当app_addr和app_cmd都准备好后，将其拉高来送出指令
 reg app_wdf_end; // 写数据末端信号，当输入的数据是最后一个时，将此信号拉高，表示数据已送完
@@ -152,15 +154,7 @@ wire  [15:0] rd_cnt;  // Number of bytes to be read
 wire  [23:0] addr;
 
 
-rom roms(
-    .clk(clk_50M),
-    .ce(rom_ce),
-    .inst_count(inst_count),
-    .instruction(instouch),
-    .addr(addr),
-    .addr_req(addr_req),
-    .rd_cnt(rd_cnt)
-);
+
 
 always@ (posedge clk_50M or negedge CPU_RESETN) begin
     if (CPU_RESETN == 1'b0) begin
@@ -278,17 +272,22 @@ wire[`RegBus] digit_data_o;
 assign digit_data_o = app_wdf_data[`RegBus];
 
 //assign app_wdf_data[`RegBus] = write_data;
+
 always@ (posedge clk_50M) begin
 		if (SW[3]) begin
 			digit_data <= app_addr;
+			 led_bits[3] <=1'b1;
+		end
+		if (SW[4]) begin
+		    led_bits[4] <= 1'b1;
 		end
 		case (SW[1:0])
-			2'b00 : digit_data <= app_rd_data[31:0];
+			2'b00 : digit_data <= app_rd_data[31:0]; 
 			2'b01 : digit_data <= app_rd_data[63:32];
 			2'b10 : digit_data <= app_rd_data[95:64];
 			2'b11 : digit_data <= app_rd_data[127:96];
 		endcase
-		
+        
 end
 
 
@@ -302,16 +301,19 @@ reg [1:0] counters;
 
 assign  UART_CTS = ext_uart_start_reg;
 
+
+
 always @(posedge clk_50M) begin
     if (~CPU_RESETN) begin
         number <= 8'b1111_1111; 
-        led_bits <= 16'hA; // 重置LED
+        led_bits <= 16'h0; // 重置LED
         ext_uart_tx_reg <= 8'b0;
         ext_uart_start_reg <= 1'b0;
         counters <= 2'b0;
         next_state  <= IDLE;
 		sck_en      <= 1'b0;
 		cs_n_d[0]   <= 1'b1;
+		dataout     <= 8'd0;
 		dataout     <= 8'd0;
 		data[31:0]  <=32'b0;
 		sdo_count   <= 4'd0;
@@ -324,6 +326,7 @@ always @(posedge clk_50M) begin
         wait_count  <= 8'd0;
         
     end else begin
+        led_bits[15:10] <= SW[15:10];
         if (ext_uart_start) begin
             ext_uart_tx_reg <= ext_uart_tx;
             ext_uart_start_reg <= 1'b1;
@@ -489,28 +492,19 @@ end
 
 always @(posedge clk_50M) begin
     sck_en_d <= {sck_en_d[1:0],sck_en};
-end
-
-always @(posedge clk_50M ) begin
-	if(~CPU_RESETN) begin
+    if(~CPU_RESETN) begin
 		sck <= 1'b0;
+		{cs_n,cs_n_d[2:1]} <= 3'h7;
 	end
 	else if(sck_en_d[2] & sck_en) begin
 		sck <= ~sck;
 	end
     else begin
         sck <= 1'b0;
-    end
-end
-
-always @(posedge clk_50M ) begin
-    if(~CPU_RESETN) begin
-        {cs_n,cs_n_d[2:1]} <= 3'h7;
-    end
-    else begin
         {cs_n,cs_n_d[2:1]} <= cs_n_d;
     end
 end
+
 
 STARTUPE2
 #(
@@ -560,6 +554,7 @@ assign int_i = {timer_int, 2'b00, serial_read_status^already_read_status, 2'b00}
 reg serial_read_status = 1'b0;
 reg already_read_status = 1'b0;
 reg[7:0] serial_read_data;
+
 always @(posedge ext_uart_ready) begin   
     if (~CPU_RESETN) begin 
         serial_read_status <= 1'b0;
@@ -579,6 +574,16 @@ end
   wire[`RegBus] mem_addr_i;
   wire[3:0] mem_sel_i; 
   wire mem_ce_i;   
+  
+  rom roms(
+    .clk(clk_50M),
+    .ce(rom_ce),
+    .inst_count(inst_count),
+    .instruction(instouch),
+    .addr(addr),
+    .addr_req(addr_req),
+    .rd_cnt(rd_cnt)
+);
 
  openmips openmips0(
 		.clk(clk_50M),

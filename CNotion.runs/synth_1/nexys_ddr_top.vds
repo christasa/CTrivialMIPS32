@@ -2,8 +2,8 @@
 # Vivado v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
-# Start of session at: Wed May 13 01:34:02 2020
-# Process ID: 13492
+# Start of session at: Fri Jun 26 01:55:28 2020
+# Process ID: 8864
 # Current directory: D:/coding/vivado/CNotion/CNotion.runs/synth_1
 # Command line: vivado.exe -log nexys_ddr_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source nexys_ddr_top.tcl
 # Log file: D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.vds
@@ -15,11 +15,11 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11128 
+INFO: Helper process launched with PID 9308 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 390.844 ; gain = 92.102
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 391.637 ; gain = 91.691
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'nexys_ddr_top' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
+INFO: [Synth 8-6157] synthesizing module 'nexys_ddr_top' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:3]
 	Parameter cnt_init bound to: 16'b0000000000000001 
 	Parameter IDLE bound to: 4'b0000 
 	Parameter START bound to: 4'b0001 
@@ -29,9 +29,9 @@ INFO: [Synth 8-6157] synthesizing module 'nexys_ddr_top' [D:/coding/vivado/CNoti
 	Parameter ADDR3_OUT bound to: 4'b0101 
 	Parameter READ_DATA bound to: 4'b0111 
 	Parameter ENDING bound to: 4'b1000 
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:106]
-INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:107]
-INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:144]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:108]
+INFO: [Synth 8-5534] Detected attribute (* mark_debug = "TRUE" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:109]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:146]
 INFO: [Synth 8-6157] synthesizing module 'Disp' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
 	Parameter SEG1 bound to: 3'b000 
 	Parameter SEG2 bound to: 3'b001 
@@ -44,46 +44,45 @@ INFO: [Synth 8-6157] synthesizing module 'Disp' [D:/coding/vivado/CNotion/CNotio
 INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:43]
 INFO: [Synth 8-226] default block is never used [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:125]
 INFO: [Synth 8-6155] done synthesizing module 'Disp' (1#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/Disp.v:1]
-WARNING: [Synth 8-6104] Input port 'UART_RTS' has an internal driver [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:73]
-INFO: [Synth 8-6157] synthesizing module 'rom' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/rom.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'rom' (2#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/rom.v:2]
-INFO: [Synth 8-6157] synthesizing module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-13492-Chris/realtime/sdram_ddr_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'sdram_ddr' (3#1) [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-13492-Chris/realtime/sdram_ddr_stub.v:5]
-WARNING: [Synth 8-689] width (13) of port connection 'ddr2_addr' does not match port width (14) of module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:230]
-WARNING: [Synth 8-350] instance 'u_ddr' of module 'sdram_ddr' requires 38 connections, but only 36 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:226]
-INFO: [Synth 8-155] case statement is not full and has no default [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:338]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:520]
+INFO: [Synth 8-6157] synthesizing module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-8864-Chris/realtime/sdram_ddr_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'sdram_ddr' (2#1) [D:/coding/vivado/CNotion/CNotion.runs/synth_1/.Xil/Vivado-8864-Chris/realtime/sdram_ddr_stub.v:5]
+WARNING: [Synth 8-689] width (13) of port connection 'ddr2_addr' does not match port width (14) of module 'sdram_ddr' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:224]
+WARNING: [Synth 8-350] instance 'u_ddr' of module 'sdram_ddr' requires 38 connections, but only 36 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:220]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:341]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:514]
 INFO: [Synth 8-6157] synthesizing module 'STARTUPE2' [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:51869]
 	Parameter PROG_USR bound to: FALSE - type: string 
 	Parameter SIM_CCLK_FREQ bound to: 10.000000 - type: float 
-INFO: [Synth 8-6155] done synthesizing module 'STARTUPE2' (4#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:51869]
-INFO: [Synth 8-6157] synthesizing module 'async_receiver' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:75]
+INFO: [Synth 8-6155] done synthesizing module 'STARTUPE2' (3#1) [D:/Xilinx/Vivado/2018.3/scripts/rt/data/unisim_comp.v:51869]
+INFO: [Synth 8-6157] synthesizing module 'async_receiver' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:76]
 	Parameter ClkFrequency bound to: 50000000 - type: integer 
 	Parameter Baud bound to: 115200 - type: integer 
 	Parameter Oversampling bound to: 8 - type: integer 
 	Parameter l2o bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BaudTickGen' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:191]
 	Parameter ClkFrequency bound to: 50000000 - type: integer 
 	Parameter Baud bound to: 115200 - type: integer 
 	Parameter Oversampling bound to: 8 - type: integer 
 	Parameter AccWidth bound to: 17 - type: integer 
 	Parameter ShiftLimiter bound to: 6 - type: integer 
 	Parameter Inc bound to: 2416 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen' (5#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
-INFO: [Synth 8-6155] done synthesizing module 'async_receiver' (6#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:75]
-WARNING: [Synth 8-350] instance 'ext_uart_r' of module 'async_receiver' requires 7 connections, but only 5 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:539]
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen' (4#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:191]
+INFO: [Synth 8-6155] done synthesizing module 'async_receiver' (5#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:76]
+WARNING: [Synth 8-350] instance 'ext_uart_r' of module 'async_receiver' requires 7 connections, but only 5 given [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:533]
 INFO: [Synth 8-6157] synthesizing module 'async_transmitter' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:14]
 	Parameter ClkFrequency bound to: 50000000 - type: integer 
 	Parameter Baud bound to: 115200 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'BaudTickGen__parameterized0' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
+INFO: [Synth 8-6157] synthesizing module 'BaudTickGen__parameterized0' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:191]
 	Parameter ClkFrequency bound to: 50000000 - type: integer 
 	Parameter Baud bound to: 115200 - type: integer 
 	Parameter Oversampling bound to: 1 - type: integer 
 	Parameter AccWidth bound to: 17 - type: integer 
 	Parameter ShiftLimiter bound to: 3 - type: integer 
 	Parameter Inc bound to: 302 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen__parameterized0' (6#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:189]
-INFO: [Synth 8-6155] done synthesizing module 'async_transmitter' (7#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'BaudTickGen__parameterized0' (5#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:191]
+INFO: [Synth 8-6155] done synthesizing module 'async_transmitter' (6#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/async.v:14]
+INFO: [Synth 8-6157] synthesizing module 'rom' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/rom.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'rom' (7#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/rom.v:2]
 INFO: [Synth 8-6157] synthesizing module 'openmips' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v:4]
 INFO: [Synth 8-6157] synthesizing module 'pc_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/pc_reg.v:4]
 INFO: [Synth 8-6155] done synthesizing module 'pc_reg' (8#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/pc_reg.v:4]
@@ -125,21 +124,21 @@ INFO: [Synth 8-6157] synthesizing module 'cp0_reg' [D:/coding/vivado/CNotion/CNo
 INFO: [Synth 8-155] case statement is not full and has no default [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:54]
 INFO: [Synth 8-6155] done synthesizing module 'cp0_reg' (21#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/cp0_reg.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'openmips' (22#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/openmips.v:4]
-WARNING: [Synth 8-689] width (1) of port connection 'ram_ce_o' does not match port width (4) of module 'openmips' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:598]
+WARNING: [Synth 8-689] width (1) of port connection 'ram_ce_o' does not match port width (4) of module 'openmips' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:603]
 INFO: [Synth 8-6157] synthesizing module 'inst_rom' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:3]
 INFO: [Synth 8-3876] $readmem data file 'rom.data' is read successfully [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'inst_rom' (23#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/inst_rom.v:3]
-WARNING: [Synth 8-6014] Unused sequential element serial_read_data_reg was removed.  [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:568]
-WARNING: [Synth 8-3848] Net RGB1_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:16]
-WARNING: [Synth 8-3848] Net RGB1_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:17]
-WARNING: [Synth 8-3848] Net RGB1_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:18]
-WARNING: [Synth 8-3848] Net RGB2_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:19]
-WARNING: [Synth 8-3848] Net RGB2_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:20]
-WARNING: [Synth 8-3848] Net RGB2_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:21]
-WARNING: [Synth 8-3848] Net ext_uart_start in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:300]
-WARNING: [Synth 8-3848] Net instruction in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:131]
-WARNING: [Synth 8-3848] Net ext_uart_tx in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:298]
-INFO: [Synth 8-6155] done synthesizing module 'nexys_ddr_top' (24#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:4]
+WARNING: [Synth 8-6014] Unused sequential element serial_read_data_reg was removed.  [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:563]
+WARNING: [Synth 8-3848] Net RGB1_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:15]
+WARNING: [Synth 8-3848] Net RGB1_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:16]
+WARNING: [Synth 8-3848] Net RGB1_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:17]
+WARNING: [Synth 8-3848] Net RGB2_Blue in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:18]
+WARNING: [Synth 8-3848] Net RGB2_Green in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:19]
+WARNING: [Synth 8-3848] Net RGB2_Red in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:20]
+WARNING: [Synth 8-3848] Net ext_uart_start in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:299]
+WARNING: [Synth 8-3848] Net instruction in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:133]
+WARNING: [Synth 8-3848] Net ext_uart_tx in module/entity nexys_ddr_top does not have driver. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:297]
+INFO: [Synth 8-6155] done synthesizing module 'nexys_ddr_top' (24#1) [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:3]
 WARNING: [Synth 8-3917] design nexys_ddr_top has port wp_n driven by constant 1
 WARNING: [Synth 8-3917] design nexys_ddr_top has port hld_n driven by constant 1
 WARNING: [Synth 8-3331] design inst_rom has unconnected port addr[31]
@@ -244,7 +243,7 @@ WARNING: [Synth 8-3331] design nexys_ddr_top has unconnected port BTN[2]
 WARNING: [Synth 8-3331] design nexys_ddr_top has unconnected port BTN[1]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 468.078 ; gain = 169.336
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 468.848 ; gain = 168.902
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -257,10 +256,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 468.078 ; gain = 169.336
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 468.848 ; gain = 168.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 468.078 ; gain = 169.336
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 468.848 ; gain = 168.902
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -277,24 +276,24 @@ Finished Parsing XDC File [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/impor
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/nexys_ddr_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/coding/vivado/CNotion/CNotion.srcs/constrs_1/imports/CNotion_MIPS32/Nexys-4-DDR-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/nexys_ddr_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/nexys_ddr_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 855.719 ; gain = 0.000
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 855.719 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 853.496 ; gain = 0.000
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 853.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 855.719 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 855.719 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -393,21 +392,21 @@ Applied set_property IO_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/c
 Applied set_property CLOCK_BUFFER_TYPE = NONE for ddr2_we_n. (constraint file  d:/coding/vivado/CNotion/CNotion.srcs/sources_1/ip/sdram_ddr/sdram_ddr/sdram_ddr_in_context.xdc, line 95).
 Applied set_property DONT_TOUCH = true for u_ddr. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Disp'
 INFO: [Synth 8-5544] ROM "value" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "sseg_an0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-INFO: [Synth 8-5546] ROM "instruction" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "addr_req" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "addr" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5546] ROM "rd_cnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-802] inferred FSM for state register 'RxD_state_reg' in module 'async_receiver'
 INFO: [Synth 8-5544] ROM "RxD_bit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "RxD_bit" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "OversamplingCnt0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'TxD_state_reg' in module 'async_transmitter'
+INFO: [Synth 8-5546] ROM "instruction" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "addr_req" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "addr" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "rd_cnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "reg1_read_o" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "reg1_read_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "reg1_read_o" won't be mapped to RAM because it is too sparse
@@ -466,8 +465,8 @@ INFO: [Synth 8-5546] ROM "cause_o" won't be mapped to RAM because it is too spar
 INFO: [Synth 8-5546] ROM "epc_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "data_o" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "inst_mem" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-4471] merging register 'app_wdf_wren_reg' into 'app_wdf_end_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:174]
-WARNING: [Synth 8-3936] Found unconnected internal register 'datain_shift_reg' and it is trimmed from '8' to '7' bits. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:422]
+INFO: [Synth 8-4471] merging register 'app_wdf_wren_reg' into 'app_wdf_end_reg' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:168]
+WARNING: [Synth 8-3936] Found unconnected internal register 'datain_shift_reg' and it is trimmed from '8' to '7' bits. [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:425]
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'nexys_ddr_top'
 INFO: [Synth 8-5546] ROM "app_en" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5544] ROM "data_count" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -494,7 +493,6 @@ INFO: [Synth 8-5544] ROM "app_addr" won't be mapped to Block RAM because address
 INFO: [Synth 8-5544] ROM "app_cmd" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data_count" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data_count" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-INFO: [Synth 8-5544] ROM "sck" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -574,7 +572,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'data_o_reg' [D:/coding/viva
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'nexys_ddr_top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -609,7 +607,7 @@ Detailed RTL Component Info :
 	               27 Bit    Registers := 1     
 	               24 Bit    Registers := 1     
 	               18 Bit    Registers := 2     
-	               16 Bit    Registers := 4     
+	               16 Bit    Registers := 3     
 	                8 Bit    Registers := 12    
 	                7 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
@@ -687,16 +685,16 @@ Detailed RTL Component Info :
 	   3 Input      2 Bit        Muxes := 1     
 	   7 Input      2 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 27    
-	   2 Input      1 Bit        Muxes := 111   
-	  15 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 112   
 	  11 Input      1 Bit        Muxes := 6     
+	  15 Input      1 Bit        Muxes := 6     
 	  28 Input      1 Bit        Muxes := 4     
 	  33 Input      1 Bit        Muxes := 4     
 	   4 Input      1 Bit        Muxes := 12    
 	   5 Input      1 Bit        Muxes := 3     
 	   7 Input      1 Bit        Muxes := 5     
 	   6 Input      1 Bit        Muxes := 5     
-	   3 Input      1 Bit        Muxes := 5     
+	   3 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -716,7 +714,7 @@ Detailed RTL Component Info :
 	              128 Bit    Registers := 2     
 	               32 Bit    Registers := 1     
 	               27 Bit    Registers := 1     
-	               16 Bit    Registers := 3     
+	               16 Bit    Registers := 2     
 	                8 Bit    Registers := 6     
 	                7 Bit    Registers := 1     
 	                4 Bit    Registers := 1     
@@ -741,11 +739,10 @@ Detailed RTL Component Info :
 	   4 Input      3 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 31    
+	   2 Input      1 Bit        Muxes := 32    
 	   8 Input      1 Bit        Muxes := 15    
 	   4 Input      1 Bit        Muxes := 1     
 	   7 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
 Module Disp 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -757,22 +754,6 @@ Detailed RTL Component Info :
 	   7 Input      8 Bit        Muxes := 1     
 	   8 Input      4 Bit        Muxes := 1     
 	   8 Input      1 Bit        Muxes := 1     
-Module rom 
-Detailed RTL Component Info : 
-+---Registers : 
-	               24 Bit    Registers := 1     
-	               16 Bit    Registers := 1     
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input     24 Bit        Muxes := 1     
-	  15 Input     24 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
-	  15 Input      8 Bit        Muxes := 1     
-	   2 Input      7 Bit        Muxes := 1     
-	  15 Input      7 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	  15 Input      1 Bit        Muxes := 1     
 Module BaudTickGen 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -815,6 +796,22 @@ Detailed RTL Component Info :
 	  11 Input      4 Bit        Muxes := 1     
 	  11 Input      1 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
+Module rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	  15 Input     24 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	  15 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 1     
 Module pc_reg 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1073,15 +1070,15 @@ INFO: [Synth 8-5544] ROM "counter" won't be mapped to Block RAM because address 
 INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 WARNING: [Synth 8-3917] design nexys_ddr_top has port wp_n driven by constant 1
 WARNING: [Synth 8-3917] design nexys_ddr_top has port hld_n driven by constant 1
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[0]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[8]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[16]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[1]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[9]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[17]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[2]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[10]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[18]' (FD) to 'roms/rd_cnt_reg[3]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[0]' (FD) to 'roms/addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[8]' (FD) to 'roms/addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[16]' (FD) to 'roms/addr_reg[1]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[1]' (FD) to 'roms/addr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[9]' (FD) to 'roms/addr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[17]' (FD) to 'roms/addr_reg[2]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[2]' (FD) to 'roms/addr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[10]' (FD) to 'roms/addr_reg[3]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[18]' (FD) to 'roms/addr_reg[3]'
 INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/config_o_reg[16]' (FDRE) to 'openmips0/cp0_reg0/prid_o_reg[0]'
 INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/prid_o_reg[16]' (FDRE) to 'openmips0/cp0_reg0/prid_o_reg[0]'
 INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/cause_o_reg[16]' (FDRE) to 'openmips0/cp0_reg0/prid_o_reg[0]'
@@ -1163,12 +1160,12 @@ INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/cause_o_reg[1]' (FDRE)
 INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/config_o_reg[7]' (FDRE) to 'openmips0/cp0_reg0/prid_o_reg[7]'
 INFO: [Synth 8-3886] merging instance 'openmips0/cp0_reg0/prid_o_reg[7]' (FDRE) to 'openmips0/cp0_reg0/cause_o_reg[7]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (openmips0/cp0_reg0/\cause_o_reg[7] )
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[3]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[11]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[19]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[4]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[12]' (FD) to 'roms/rd_cnt_reg[3]'
-INFO: [Synth 8-3886] merging instance 'roms/addr_reg[20]' (FD) to 'roms/rd_cnt_reg[3]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[3]' (FD) to 'roms/addr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[11]' (FD) to 'roms/addr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[19]' (FD) to 'roms/addr_reg[4]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[4]' (FD) to 'roms/addr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[12]' (FD) to 'roms/addr_reg[5]'
+INFO: [Synth 8-3886] merging instance 'roms/addr_reg[20]' (FD) to 'roms/addr_reg[5]'
 INFO: [Synth 8-3886] merging instance 'openmips0/if_id0/id_inst_reg[24]' (FDRE) to 'openmips0/if_id0/id_inst_reg[22]'
 INFO: [Synth 8-3886] merging instance 'openmips0/if_id0/id_inst_reg[22]' (FDRE) to 'openmips0/if_id0/id_inst_reg[20]'
 INFO: [Synth 8-3886] merging instance 'openmips0/if_id0/id_inst_reg[20]' (FDRE) to 'openmips0/if_id0/id_inst_reg[19]'
@@ -1376,104 +1373,110 @@ WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[46]) is unused and wi
 WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[45]) is unused and will be removed from module ex.
 WARNING: [Synth 8-3332] Sequential element (hilo_temp1_reg[44]) is unused and will be removed from module ex.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[31]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[30]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[29]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[28]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[27]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[26]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[25]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[24]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[23]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[22]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[21]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[20]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[19]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[18]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[17]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[16]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[15]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[14]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[13]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[12]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[11]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[10]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[9]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[8]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[7]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[6]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[5]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[4]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[3]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[2]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[1]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[0]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:172]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'led_bits_reg[4]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'led_bits_reg[3]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:309]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[31]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[30]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[29]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[28]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[27]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[26]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[25]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[24]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[23]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[22]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[21]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[20]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[19]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[18]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[17]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[16]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[15]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[14]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[13]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[12]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[11]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[10]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[9]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[8]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[7]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[6]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[5]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[4]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[3]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[2]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[1]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'app_wdf_data_reg[0]/Q' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [D:/coding/vivado/CNotion/CNotion.srcs/sources_1/imports/CNotion_MIPS32/nexys_ddr_top.v:166]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1505,13 +1508,13 @@ Start Applying XDC Timing Constraints
 INFO: [Synth 8-5578] Moved timing constraint from pin 'u_ddr/ui_clk' to pin 'u_ddr/bbstub_ui_clk/O'
 INFO: [Synth 8-5819] Moved 1 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1523,7 +1526,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1547,7 +1550,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1560,7 +1563,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1572,25 +1575,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1625,18 +1628,18 @@ Report Cell Usage:
 |2     |BUFG      |     1|
 |3     |CARRY4    |    35|
 |4     |LUT1      |    10|
-|5     |LUT2      |    35|
-|6     |LUT3      |    51|
-|7     |LUT4      |    49|
-|8     |LUT5      |    39|
-|9     |LUT6      |    45|
+|5     |LUT2      |    36|
+|6     |LUT3      |    50|
+|7     |LUT4      |    47|
+|8     |LUT5      |    41|
+|9     |LUT6      |    47|
 |10    |SRL16E    |     1|
 |11    |STARTUPE2 |     1|
 |12    |FDCE      |    25|
 |13    |FDPE      |     1|
-|14    |FDRE      |   307|
-|15    |FDSE      |    18|
-|16    |IBUF      |     3|
+|14    |FDRE      |   314|
+|15    |FDSE      |    16|
+|16    |IBUF      |     9|
 |17    |OBUF      |    38|
 |18    |OBUFT     |     6|
 +------+----------+------+
@@ -1645,34 +1648,34 @@ Report Instance Areas:
 +------+-------------+----------------------------+------+
 |      |Instance     |Module                      |Cells |
 +------+-------------+----------------------------+------+
-|1     |top          |                            |   830|
+|1     |top          |                            |   843|
 |2     |  disp       |Disp                        |    82|
 |3     |  ext_uart_t |async_transmitter           |    42|
 |4     |    tickgen  |BaudTickGen__parameterized0 |    29|
 |5     |  roms       |rom                         |    65|
 +------+-------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 96 critical warnings and 467 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:25 . Memory (MB): peak = 853.496 ; gain = 169.336
-Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 853.496 ; gain = 554.754
+Synthesis finished with 0 errors, 102 critical warnings and 459 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 855.719 ; gain = 168.902
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 855.719 ; gain = 555.773
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.496 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 855.719 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-417 Infos, 237 Warnings, 96 Critical Warnings and 0 Errors encountered.
+416 Infos, 236 Warnings, 102 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 853.496 ; gain = 554.754
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 853.496 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 855.719 ; gain = 555.773
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 855.719 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'D:/coding/vivado/CNotion/CNotion.runs/synth_1/nexys_ddr_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file nexys_ddr_top_utilization_synth.rpt -pb nexys_ddr_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed May 13 01:34:43 2020...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun 26 01:56:14 2020...
